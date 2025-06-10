@@ -11,12 +11,13 @@ Once the venv is activated, upgrade pip first by running "python -m pip install 
 # Workflow
 1. Create a branch with your name. This is the branch you will be working on without changing the main script. This is for safety reasons and to not hinder each other.
     "git checkout -b <<YOUR_NAME>>"
+    If your branch already existst just type:
+    "git checkout <<YOUR_NAME>>"
 2. Work on the code and save your files on your local machine. If you use vs-code you should see your branchname all the time in the bottom left corner of your screen.
 3. As soon as you have a running and succesfull change, redirect to the MLME_project folder and run following commands:
-    "git pull origin main"
     "git add ."
     "git commit -m "<<COMMIT_MESSAGE_ON_WHAT_YOU_HAVE_DONE>>""
-    "git push -u origin <<YOUR_NAME>>"
+    "git push -u origin <<YOUR_NAME>>" (if branch already exists just type "git push")
     "git pull origin main"
 4. Go to github.com and navigate to your branch.
 5. Create a new pull request. Add as much details as possible on what you did in the message section. Add the repo owner (pauljlt) as reviewer of the code.
