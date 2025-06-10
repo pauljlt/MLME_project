@@ -23,4 +23,4 @@ Once the venv is activated, upgrade pip first by running "python -m pip install 
 5. Create a new pull request. Add as much details as possible on what you did in the message section. Add the repo owner (pauljlt) as reviewer of the code.
 
 # How to use git
-For detailed informtion on how to use git please visit "https://www.youtube.com/watch?v=8JJ101D3knE".
+For detailed informtion on how to use git please visit https://www.youtube.com/watch?v=8JJ101D3knE.
