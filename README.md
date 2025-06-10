@@ -1,26 +1,87 @@
 # MLME_project
 
-# Setup
-First please check if you are on python 3.11.9. This version is not necessary, but other versions may lead to errors.
+First, create a folder on your machine where you want to install the repository. Then open a shell and run:
 
-For using the project one needs to set up a virtual environment by running "python -m venv venv" on windows or "python3 -m venv venv" on macOS. To activate this environment please run "venv\Scipts\activate.bat" on windows or "source venv/bin/activate" on macOS. For bash one can use the macOS commands.
+```bash
+git clone https://github.com/pauljlt/MLME_project.git
+```
 
-# Install nescessery requirements in the virtual environment
-Once the venv is activated, upgrade pip first by running "python -m pip install --upgrade pip" on windows or "python3 -m pip install --upgrade pip". Following that, run "pip install -r requirements.txt".
+## Setup
 
-# Workflow
-1. Create a branch with your name. This is the branch you will be working on without changing the main script. This is for safety reasons and to not hinder each other.
-    "git checkout -b <<YOUR_NAME>>"
-    If your branch already existst just type:
-    "git checkout <<YOUR_NAME>>"
-2. Work on the code and save your files on your local machine. If you use vs-code you should see your branchname all the time in the bottom left corner of your screen.
-3. As soon as you have a running and succesfull change, redirect to the MLME_project folder and run following commands:
-    "git add ."
-    "git commit -m "<<COMMIT_MESSAGE_ON_WHAT_YOU_HAVE_DONE>>""
-    "git push -u origin <<YOUR_NAME>>" (if branch already exists just type "git push")
-    "git pull origin main"
-4. Go to github.com and navigate to your branch.
-5. Create a new pull request. Add as much details as possible on what you did in the message section. Add the repo owner (pauljlt) as reviewer of the code.
+Please make sure you're using **Python 3.11.9**. This version is not strictly required, but other versions might cause errors.
 
-# How to use git
-For detailed informtion on how to use git please visit https://www.youtube.com/watch?v=8JJ101D3knE.
+To use the project, set up a virtual environment by running:
+
+- On Windows:
+  ```bash
+  python -m venv venv
+  ```
+- On macOS/Linux:
+  ```bash
+  python3 -m venv venv
+  ```
+
+To activate the environment:
+
+- On Windows:
+  ```bash
+  venv\Scripts\activate.bat
+  ```
+- On macOS/Linux (or Bash):
+  ```bash
+  source venv/bin/activate
+  ```
+
+## Install Required Packages
+
+Once the virtual environment is activated, upgrade `pip`:
+
+- On Windows:
+  ```bash
+  python -m pip install --upgrade pip
+  ```
+- On macOS/Linux:
+  ```bash
+  python3 -m pip install --upgrade pip
+  ```
+
+Then install the required packages using:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Workflow
+
+1. **Create a branch with your name.** This branch is where you’ll work without affecting the main branch. This avoids conflicts and keeps everyone’s work isolated.
+
+   ```bash
+   git checkout -b <YOUR_NAME>
+   ```
+
+   If your branch already exists, switch to it using:
+
+   ```bash
+   git checkout <YOUR_NAME>
+   ```
+
+2. **Work on the code and save files locally.**  
+   If you're using VS Code, you should see your branch name in the bottom-left corner.
+
+3. **When you’ve made successful changes**, go to the `MLME_project` folder and run the following commands:
+
+   ```bash
+   git add .
+   git commit -m "<DESCRIPTION_OF_CHANGES>"
+   git push -u origin <YOUR_NAME>   # Use just `git push` if the branch already exists
+   git pull origin main
+   ```
+
+4. **Open GitHub**, navigate to your branch, and click **"Compare & pull request"** under the "Contribute" section.
+
+5. **Fill in the PR details** (what you've done and why), and assign **pauljlt** as a reviewer.
+
+## Git Help
+
+For more details on using Git, check out this helpful video:  
+👉 https://www.youtube.com/watch?v=8JJ101D3knE
