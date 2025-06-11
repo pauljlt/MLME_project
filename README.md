@@ -14,22 +14,22 @@ To use the project, set up a virtual environment by running:
 
 - On Windows:
   ```bash
-  python -m venv venv
+  python -m venv ..\venv
   ```
 - On macOS/Linux:
   ```bash
-  python3 -m venv venv
+  python3 -m venv ../venv
   ```
 
 To activate the environment:
 
 - On Windows:
   ```bash
-  venv\Scripts\activate.bat
+  ..\venv\Scripts\activate.bat
   ```
 - On macOS/Linux (or Bash):
   ```bash
-  source venv/bin/activate
+  source ../venv/bin/activate
   ```
 
 ## Install Required Packages
