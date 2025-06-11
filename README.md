@@ -85,3 +85,8 @@ pip install -r requirements.txt
 
 For more details on using Git, check out this helpful video:  
 👉 https://www.youtube.com/watch?v=8JJ101D3knE
+
+
+# Running the project
+
+First one needs to setup the venv and install the requirements like discribed above. To run the project please navigate to the 'MLME_project'-directory in your terminal and then exicute the main.py script.

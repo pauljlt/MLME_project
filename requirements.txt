@@ -1,1 +1,4 @@
 pandas == 2.2.3
+glob2 == 0.7
+numpy == 2.3.0
+matplotlib == 3.10.3
