@@ -82,20 +82,20 @@ def plot_data(data):
     None: Displays plots of the data.
     """
     # histogram of the of the measurements
-    data[['c', 'T_PM', 'd50', 'd90', 'd10', 'T_TM']].hist(bins=50, figsize=(14,8))
+    data[['c', 'T_PM', 'd50', 'd90', 'd10', 'T_TM', 'mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']].hist(bins=50, figsize=(14,8))
     plt.suptitle("Histograms of the Measurements")
 
     # boxplot of the measurements
-    cols = ['c', 'T_PM', 'd50', 'd90', 'd10', 'T_TM']
+    cols = ['c', 'T_PM', 'd50', 'd90', 'd10', 'T_TM', 'mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']
     plt.figure(figsize=(14,8))
     for i, col in enumerate(cols, 1):
-        plt.subplot(2, 3, i)
+        plt.subplot(2, 7, i)
         data.boxplot(column=col)
         # plt.title(col)
     plt.suptitle("Boxplots of the Measurements")
 
     # correlation matrix
-    corr = data[['c', 'T_PM', 'd50', 'd90', 'd10', 'T_TM']].corr()
+    corr = data[['c', 'T_PM', 'd50', 'd90', 'd10', 'T_TM', 'mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']].corr()
 
     fig, ax = plt.subplots(figsize=(10, 8))
     cax = ax.matshow(corr, cmap='YlGnBu')
@@ -109,6 +109,7 @@ def plot_data(data):
         ax.text(j, i, f'{val:.2f}', ha='center', va='center', color='black')
 
     # scatter plot of the measurements
+    #TODO: add interesting pairs
     scatter_pairs = [
         ('c', 'T_PM'),
         ('c', 'T_TM'),
@@ -128,7 +129,7 @@ def plot_data(data):
         plt.title(f'Scatterplot: {x} vs {y}')
         plt.grid(True, which='major', axis='both', linestyle='--', alpha=0.6)
 
-    plt.suptitle("Scatterplots ausgewählter Feature-Paare")
+    plt.suptitle("Scatterplots of interesting feature pairs")
 
     plt.show()
     
