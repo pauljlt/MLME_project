@@ -14,6 +14,7 @@ def load_data(file_path):
     Returns:
     pd.DataFrame: The loaded data as a DataFrame.
     """
+    
     try:
         data = pd.read_csv(file_path, sep='\t')
         data['trajectory_id'] = os.path.basename(file_path).split('.')[0]
@@ -33,6 +34,7 @@ def load_all_data(directory):
     Returns:
     pd.DataFrame: A DataFrame containing all loaded data.
     """
+
     all_data = []
     for file_path in glob.glob(os.path.join(directory, "*.txt")):
         data = load_data(file_path)
@@ -40,6 +42,9 @@ def load_all_data(directory):
             all_data.append(data)
     
     if all_data:
+        #save the data to a csv file
+        combined_data = pd.concat(all_data, ignore_index=True)
+        combined_data.to_csv(os.path.join("C:/Users/paulj/Documents/Uni/12. Semester/MLME/MLME_project/visuals", "combined_data.csv"), index=False)
         return pd.concat(all_data, ignore_index=True)
     else:
         return pd.DataFrame()  # Return an empty DataFrame if no data was loaded
@@ -55,6 +60,7 @@ def analyze_data(data):
     Returns:
     None: Prints basic statistics of the data.
     """
+
     if not data.empty:
         print("Data Summary:")
         print(data.describe(percentiles=[0.1, 0.5, 0.9]))
@@ -81,9 +87,13 @@ def plot_data(data):
     Returns:
     None: Displays plots of the data.
     """
+
+    visuals_dir = "C:/Users/paulj/Documents/Uni/12. Semester/MLME/MLME_project/visuals"
+
     # histogram of the of the measurements
     data[['c', 'T_PM', 'd10', 'd50', 'd90', 'T_TM', 'mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']].hist(bins=50, figsize=(14,8))
     plt.suptitle("Histograms of the Measurements")
+    plt.savefig(os.path.join(visuals_dir, "raw_data_histograms.png"))
 
     # boxplot of the measurements
     cols = ['c', 'T_PM', 'd10', 'd50', 'd90', 'T_TM', 'mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']
@@ -93,12 +103,13 @@ def plot_data(data):
         data.boxplot(column=col)
         # plt.title(col)
     plt.suptitle("Boxplots of the Measurements")
+    plt.savefig(os.path.join(visuals_dir, "raw_data_boxplots.png"))
 
     # correlation matrix
     corr = data[['c', 'T_PM', 'd10', 'd50', 'd90', 'T_TM', 'mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']].corr()
 
     fig, ax = plt.subplots(figsize=(10, 8))
-    cax = ax.matshow(corr, cmap='YlGnBu')
+    cax = ax.matshow(corr, cmap='viridis')
 
     plt.xticks(range(len(corr.columns)), corr.columns, rotation=45)
     plt.yticks(range(len(corr.columns)), corr.columns)
@@ -107,6 +118,8 @@ def plot_data(data):
     
     for (i, j), val in np.ndenumerate(corr.values): # Annotate the correlation matrix
         ax.text(j, i, f'{val:.2f}', ha='center', va='center', color='black')
+    
+    plt.savefig(os.path.join(visuals_dir, "raw_data_correlation_matrix.png"))
 
     # scatter plot of the measurements
     scatter_pairs = [
@@ -134,13 +147,14 @@ def plot_data(data):
         plt.scatter(data[x], data[y], alpha=0.25)
         plt.xlabel(x)
         plt.ylabel(y)
-        plt.title(f'{x} vs {y}')
+        plt.title(f'{y} vs {x}')
         plt.grid(True, which='major', axis='both', linestyle='--', alpha=0.6)
 
     plt.suptitle("Scatterplots of interesting feature pairs")
     plt.tight_layout()
+    plt.savefig(os.path.join(visuals_dir, "raw_data_scatter_plots.png"))
     plt.show()
-    
+
 
 
 if __name__ == "__main__":
