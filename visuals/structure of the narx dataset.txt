@@ -1,0 +1,13 @@
+Example:	2 Inputs --> size(u)=3
+		2 States --> size(y)=2
+		lag = u_lag = y_lag = 2
+
+
+x:		[[y^0_t-1,0	y^0_t-1,1	y^0_t-2,0	y^0_t-2,1	u^0_t-1,0 	u^0_t-1,1	u^0_t-1,2	u^0_t-2,0 	u^0_t-2,1	u^0_t-2,2]		y_out:	[y^0_t			meta_indices:	[row in clustered_raw_data for y^0_t
+		 											.											  .							.
+		 											.											  .							.
+		 											.											  .							.
+		 [y^n_t-1,0	y^n_t-1,1	y^n_t-2,0	y^n_t-2,1	u^n_t-1,0 	u^n_t-1,1	u^n_t-1,2	u^n_t-2,0 	u^n_t-2,1	u^n_t-2,2]			 y^n_t]					 row in clustered_raw_data for y^n_t]
+
+
+The meta indices are important to be able to calculate the residuals for the CQRs. Without them, the one wouldn't be able to link the predicted values by the ANN to the corresponding true values.

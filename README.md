@@ -89,4 +89,10 @@ For more details on using Git, check out this helpful video:
 
 # Running the project
 
-First one needs to setup the venv and install the requirements like discribed above. To run the project please navigate to the 'MLME_project'-directory in your terminal and then exicute the main.py script.
+First one needs to setup the venv and install the requirements like discribed above. To run any script please navigate to the 'MLME_project'-directory in your terminal and then execute the respective script.
+
+1. **Analyze and visualize the given data by executing 'data_management.py'.**
+2. **Cluster the data by executing 'clustering.py'.**
+3. **Setup and train the ANN by running 'ann.py'.**
+4. **If you want to optimize your hyperparameters by bayesian optimization, you can do so by running 'narx_bayesian_optimization.py'. Be carefull, since this needs a lot of computational power.**
+5. **TODO: CQRs**

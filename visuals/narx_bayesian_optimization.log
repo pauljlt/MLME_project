@@ -1,0 +1,40 @@
+Trial 0: RMSE = 1.9436 | Params: {'lag': 8, 'hidden_layers': [64], 'dropout': 0.24706942106473903, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.0010999607756609177, 'epochs': 61}
+Trial 1: RMSE = 1.8688 | Params: {'lag': 6, 'hidden_layers': [64, 128, 64], 'dropout': 0.3850803381064363, 'activation': 'relu', 'batch_size': 64, 'lr': 0.001773400566006938, 'epochs': 52}
+Trial 2: RMSE = 0.7407 | Params: {'lag': 8, 'hidden_layers': [128, 256, 128], 'dropout': 0.03656064187739179, 'activation': 'relu', 'batch_size': 16, 'lr': 0.0005112720544632515, 'epochs': 142}
+Trial 3: RMSE = 5.7795 | Params: {'lag': 7, 'hidden_layers': [128], 'dropout': 0.3465107089730431, 'activation': 'relu', 'batch_size': 32, 'lr': 0.0015337758105047556, 'epochs': 56}
+Trial 4: RMSE = 3.4570 | Params: {'lag': 4, 'hidden_layers': [128, 256, 128], 'dropout': 0.33411056851443977, 'activation': 'tanh', 'batch_size': 16, 'lr': 0.0008621591885551802, 'epochs': 103}
+Trial 5: RMSE = 53.4182 | Params: {'lag': 8, 'hidden_layers': [128, 256, 128], 'dropout': 0.023626675697595002, 'activation': 'tanh', 'batch_size': 16, 'lr': 0.05757963906152101, 'epochs': 95}
+Trial 6: RMSE = 45.3389 | Params: {'lag': 8, 'hidden_layers': [64, 128], 'dropout': 0.18276914789335247, 'activation': 'relu', 'batch_size': 32, 'lr': 0.08828136743978211, 'epochs': 129}
+Trial 7: RMSE = 41.5360 | Params: {'lag': 6, 'hidden_layers': [128, 256, 128], 'dropout': 0.2974422261659021, 'activation': 'relu', 'batch_size': 64, 'lr': 0.018157517162070265, 'epochs': 104}
+Trial 8: RMSE = 0.9786 | Params: {'lag': 3, 'hidden_layers': [64, 128, 64], 'dropout': 0.2673307384005028, 'activation': 'relu', 'batch_size': 64, 'lr': 0.00018273547960700906, 'epochs': 51}
+Trial 9: RMSE = 1.7356 | Params: {'lag': 7, 'hidden_layers': [64, 128, 64], 'dropout': 0.343435984271776, 'activation': 'tanh', 'batch_size': 16, 'lr': 0.0006665628064963404, 'epochs': 52}
+Trial 10: RMSE = 0.3817 | Params: {'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.004964119096342673, 'activation': 'relu', 'batch_size': 16, 'lr': 0.00010408904709686547, 'epochs': 150}
+Trial 11: RMSE = 0.3694 | Params: {'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.013100588880661668, 'activation': 'relu', 'batch_size': 16, 'lr': 0.00013551552947099502, 'epochs': 150}
+Trial 12: RMSE = 0.4138 | Params: {'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.1010352696547164, 'activation': 'relu', 'batch_size': 16, 'lr': 0.00014393952002768172, 'epochs': 150}
+Trial 13: RMSE = 0.6424 | Params: {'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.10259580872336962, 'activation': 'relu', 'batch_size': 16, 'lr': 0.0001022549242489126, 'epochs': 123}
+Trial 14: RMSE = 0.4873 | Params: {'lag': 4, 'hidden_layers': [128, 64], 'dropout': 0.00479636486499429, 'activation': 'relu', 'batch_size': 16, 'lr': 0.0002564480789527116, 'epochs': 132}
+Trial 15: RMSE = 5.9176 | Params: {'lag': 4, 'hidden_layers': [128, 64], 'dropout': 0.08951079723543874, 'activation': 'relu', 'batch_size': 16, 'lr': 0.007919125349242825, 'epochs': 117}
+Trial 16: RMSE = 0.5626 | Params: {'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.1567285577616217, 'activation': 'relu', 'batch_size': 16, 'lr': 0.00037730534784056655, 'epochs': 83}
+Trial 17: RMSE = 4.4799 | Params: {'lag': 3, 'hidden_layers': [64], 'dropout': 0.05578011533199945, 'activation': 'relu', 'batch_size': 16, 'lr': 0.0045263975149924685, 'epochs': 149}
+Trial 18: RMSE = 0.3576 | Params: {'lag': 6, 'hidden_layers': [128], 'dropout': 0.140807571899637, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.00010014736901309232, 'epochs': 136}
+Trial 19: RMSE = 0.6598 | Params: {'lag': 6, 'hidden_layers': [128], 'dropout': 0.142606844538457, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.0003285748872755772, 'epochs': 138}
+Trial 20: RMSE = 1.9370 | Params: {'lag': 7, 'hidden_layers': [128], 'dropout': 0.21765792936987194, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.0036141511342169287, 'epochs': 113}
+Trial 21: RMSE = 0.2143 | Params: {'lag': 5, 'hidden_layers': [64, 128], 'dropout': 0.05600712050613521, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.0001079304727251836, 'epochs': 140}
+Trial 22: RMSE = 0.2763 | Params: {'lag': 6, 'hidden_layers': [64, 128], 'dropout': 0.05894145446422333, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.0002051639123314518, 'epochs': 138}
+Trial 23: RMSE = 0.3989 | Params: {'lag': 6, 'hidden_layers': [64, 128], 'dropout': 0.07128099371850122, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.0002221367198065885, 'epochs': 136}
+Trial 24: RMSE = 0.5394 | Params: {'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.13359725374049863, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.00041008207399782825, 'epochs': 125}
+Trial 25: RMSE = 0.2850 | Params: {'lag': 6, 'hidden_layers': [64, 128], 'dropout': 0.058662365704793024, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.000229223642700222, 'epochs': 115}
+Trial 26: RMSE = 0.7302 | Params: {'lag': 6, 'hidden_layers': [64, 128], 'dropout': 0.05603285839263348, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.00024385084497955534, 'epochs': 115}
+Trial 27: RMSE = 1.2466 | Params: {'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.10999585926270072, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.0006100704830911555, 'epochs': 91}
+Trial 28: RMSE = 2.5832 | Params: {'lag': 4, 'hidden_layers': [64, 128], 'dropout': 0.0706031921141743, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.002153645129727078, 'epochs': 78}
+Trial 29: RMSE = 1.2190 | Params: {'lag': 5, 'hidden_layers': [64, 128], 'dropout': 0.21451340180752906, 'activation': 'tanh', 'batch_size': 32, 'lr': 0.0008528928903822557, 'epochs': 110}    
+
+Best Trial:
+Value (RMSE): 0.2143
+  lag: 5
+  hidden_layers: [64, 128]
+  dropout: 0.05600712050613521
+  activation: tanh
+  batch_size: 32
+  lr: 0.0001079304727251836
+  epochs: 140

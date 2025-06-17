@@ -1,4 +1,7 @@
 pandas == 2.2.3
 glob2 == 0.7
-numpy == 2.3.0
+numpy == 1.26.4
 matplotlib == 3.10.3
+scikit-learn == 1.7.0
+scipy == 1.15.3
+torch == 2.3.0
