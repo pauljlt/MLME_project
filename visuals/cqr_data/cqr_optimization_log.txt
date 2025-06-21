@@ -1,0 +1,789 @@
+
+Starting optimization for target 'T_PM' (index 0), quantile 0.1
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [64] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [128] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [64, 64] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [128, 64] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [128, 128] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_project\scripts\CQR\cqr_bayesian_optimization.py:31: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use suggest_float(..., log=True) instead.
+  lr = trial.suggest_loguniform("lr", 1e-5, 1e-3)
+Epoch 0: Loss = 0.0155884782
+Epoch 10: Loss = 0.0157138556
+Epoch 20: Loss = 0.0039119450
+Epoch 30: Loss = 0.0058370158
+Epoch 40: Loss = 0.0074630328
+Epoch 50: Loss = 0.0397233628
+Epoch 60: Loss = 0.0130619602
+Epoch 70: Loss = 0.0100812512
+Epoch 80: Loss = 0.0106329089
+Target index 0, quantile 0.1, trial completed with loss: 0.096236
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.1944628598936119
+  activation: tanh
+  lr: 4.3778152611691886e-05
+  batch_size: 16
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [64] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [128] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [64, 64] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [128, 64] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\distributions.py:518: UserWarning: Choices for a categorical distribution should be a tuple of None, bool, int, float and str for persistent storage but contains [128, 128] which is of type list.
+  warnings.warn(message)
+C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_project\scripts\CQR\cqr_bayesian_optimization.py:31: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use suggest_float(..., log=True) instead.
+  lr = trial.suggest_loguniform("lr", 1e-5, 1e-3)
+Epoch 0: Loss = 0.0014356002
+Epoch 10: Loss = 0.0109153092
+Epoch 20: Loss = 0.0229816176
+Epoch 30: Loss = 0.0179104879
+Epoch 40: Loss = 0.0192312319
+Epoch 50: Loss = 0.0103712352
+Epoch 60: Loss = 0.0342433788
+Epoch 70: Loss = 0.0069317603
+Epoch 80: Loss = 0.0045642601
+Target index 0, quantile 0.1, trial completed with loss: 0.137703
+Trial hyperparameters:
+  hidden_layers: [128, 128]
+  dropout: 0.2715119374391147
+  activation: tanh
+  lr: 3.313968831774279e-05
+  batch_size: 32
+Epoch 0: Loss = 0.0166939665
+Epoch 10: Loss = 0.0038470305
+Epoch 20: Loss = 0.0034943372
+Epoch 30: Loss = 0.0177958570
+Epoch 40: Loss = 0.0061739879
+Epoch 50: Loss = 0.0122198835
+Epoch 60: Loss = 0.0016003039
+Epoch 70: Loss = 0.0120876906
+Epoch 80: Loss = 0.0025516339
+Target index 0, quantile 0.1, trial completed with loss: 0.115696
+Trial hyperparameters:
+  hidden_layers: [128, 128]
+  dropout: 0.16905474598705544
+  activation: relu
+  lr: 1.1697804587727188e-05
+  batch_size: 32
+Epoch 0: Loss = 0.0109678097
+Epoch 10: Loss = 0.0188638233
+Epoch 20: Loss = 0.0074142837
+Epoch 30: Loss = 0.0038450123
+Epoch 40: Loss = 0.0045667519
+Epoch 50: Loss = 0.0120458230
+Epoch 60: Loss = 0.0080382172
+Epoch 70: Loss = 0.0027356907
+Epoch 80: Loss = 0.0098220278
+Target index 0, quantile 0.1, trial completed with loss: 0.106679
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.10430512993372265
+  activation: relu
+  lr: 0.0008962677603639863
+  batch_size: 64
+Epoch 0: Loss = 0.0067285867
+Epoch 10: Loss = 0.0133441202
+Epoch 20: Loss = 0.0142626390
+Epoch 30: Loss = 0.0116178477
+Epoch 40: Loss = 0.0098049231
+Epoch 50: Loss = 0.0200509951
+Epoch 60: Loss = 0.0063245185
+Epoch 70: Loss = 0.0169862006
+Epoch 80: Loss = 0.0057276944
+Target index 0, quantile 0.1, trial completed with loss: 0.116727
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.16639369608990565
+  activation: relu
+  lr: 2.2013060175123013e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0289219208
+Epoch 10: Loss = 0.0158865228
+Epoch 20: Loss = 0.0019749515
+Epoch 30: Loss = 0.0095681138
+Epoch 40: Loss = 0.0092992112
+Epoch 50: Loss = 0.0170936361
+Epoch 60: Loss = 0.0072732945
+Epoch 70: Loss = 0.0070156241
+Epoch 80: Loss = 0.0105377696
+Target index 0, quantile 0.1, trial completed with loss: 0.142282
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.22058571947218633
+  activation: tanh
+  lr: 2.34890586214779e-05
+  batch_size: 32
+Epoch 0: Loss = 0.0047873510
+Epoch 10: Loss = 0.0074186483
+Epoch 20: Loss = 0.0079288129
+Epoch 30: Loss = 0.0147393178
+Epoch 40: Loss = 0.0055083525
+Epoch 50: Loss = 0.0230428707
+Epoch 60: Loss = 0.0038841090
+Epoch 70: Loss = 0.0117389839
+Epoch 80: Loss = 0.0027430605
+Target index 0, quantile 0.1, trial completed with loss: 0.069926
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.04102193395087012
+  activation: relu
+  lr: 0.0004322285049048201
+  batch_size: 16
+Epoch 0: Loss = 0.1043965667
+Epoch 10: Loss = 0.0168308597
+Epoch 20: Loss = 0.0041501923
+Epoch 30: Loss = 0.0854145959
+Epoch 40: Loss = 0.0172423571
+Epoch 50: Loss = 0.0085224546
+Epoch 60: Loss = 0.0175462849
+Epoch 70: Loss = 0.0045679626
+Epoch 80: Loss = 0.0536013432
+Target index 0, quantile 0.1, trial completed with loss: 0.112286
+Trial hyperparameters:
+  hidden_layers: [128]
+  dropout: 0.06934571457890863
+  activation: relu
+  lr: 1.739059440459242e-05
+  batch_size: 32
+Epoch 0: Loss = 0.0145273078
+Epoch 10: Loss = 0.0124469902
+Epoch 20: Loss = 0.0033059218
+Epoch 30: Loss = 0.0142665617
+Epoch 40: Loss = 0.0024884643
+Epoch 50: Loss = 0.0138081461
+Epoch 60: Loss = 0.0080273487
+Epoch 70: Loss = 0.0613971502
+Epoch 80: Loss = 0.0122542968
+Target index 0, quantile 0.1, trial completed with loss: 0.101998
+Trial hyperparameters:
+  hidden_layers: [64, 64]
+  dropout: 0.13452894272925656
+  activation: tanh
+  lr: 8.400035197453006e-05
+  batch_size: 64
+Epoch 0: Loss = 0.0085685607
+Epoch 10: Loss = 0.0061753574
+Epoch 20: Loss = 0.0130707081
+Epoch 30: Loss = 0.0998897925
+Epoch 40: Loss = 0.5686267018
+Epoch 50: Loss = 0.0302883275
+Epoch 60: Loss = 0.0040937001
+Epoch 70: Loss = 0.0077716392
+Epoch 80: Loss = 0.0008668488
+Target index 0, quantile 0.1, trial completed with loss: 0.111310
+Trial hyperparameters:
+  hidden_layers: [128]
+  dropout: 0.10095433095428703
+  activation: relu
+  lr: 1.5986946858293793e-05
+  batch_size: 16
+Best trial for target 'T_PM', quantile 0.1:
+  hidden_layers: [64]
+  dropout: 0.04102193395087012
+  activation: relu
+  lr: 0.0004322285049048201
+  batch_size: 16
+
+Starting optimization for target 'T_PM' (index 0), quantile 0.9
+Epoch 0: Loss = 0.0090419063
+Epoch 10: Loss = 0.0104864566
+Epoch 20: Loss = 0.0254362337
+Epoch 30: Loss = 0.0286162551
+Epoch 40: Loss = 0.0090938602
+Epoch 50: Loss = 0.0091301259
+Epoch 60: Loss = 0.0029604470
+Epoch 70: Loss = 0.0053125750
+Epoch 80: Loss = 0.0108627882
+Target index 0, quantile 0.9, trial completed with loss: 0.084859
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.16809723087762812
+  activation: relu
+  lr: 2.5033731443611722e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0053765485
+Epoch 10: Loss = 0.0058426559
+Epoch 20: Loss = 0.0067138262
+Epoch 30: Loss = 0.0027810438
+Epoch 40: Loss = 0.0073418655
+Epoch 50: Loss = 0.0069570504
+Epoch 60: Loss = 0.0056683128
+Epoch 70: Loss = 0.0034019279
+Epoch 80: Loss = 0.0089640692
+Target index 0, quantile 0.9, trial completed with loss: 0.104020
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.06772226780223353
+  activation: tanh
+  lr: 0.00044428320085281606
+  batch_size: 16
+Epoch 0: Loss = 0.0033817263
+Epoch 10: Loss = 0.0376313068
+Epoch 20: Loss = 0.0091141993
+Epoch 30: Loss = 0.0042986525
+Epoch 40: Loss = 0.0076874136
+Epoch 50: Loss = 0.0034895891
+Epoch 60: Loss = 0.0055760443
+Epoch 70: Loss = 0.0048319655
+Epoch 80: Loss = 0.0179651938
+Target index 0, quantile 0.9, trial completed with loss: 0.088231
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.00793325896838688
+  activation: relu
+  lr: 5.347551892102805e-05
+  batch_size: 64
+Epoch 0: Loss = 0.0049865232
+Epoch 10: Loss = 0.0015237213
+Epoch 20: Loss = 0.0019662976
+Epoch 30: Loss = 0.0105947666
+Epoch 40: Loss = 0.0089274328
+Epoch 50: Loss = 0.0030947919
+Epoch 60: Loss = 0.0081459899
+Epoch 70: Loss = 0.0055686063
+Epoch 80: Loss = 0.0478982665
+Target index 0, quantile 0.9, trial completed with loss: 0.086732
+Trial hyperparameters:
+  hidden_layers: [128, 128]
+  dropout: 0.19005989063252163
+  activation: tanh
+  lr: 0.0003882314755309635
+  batch_size: 32
+Epoch 0: Loss = 0.0134655684
+Epoch 10: Loss = 0.0127650546
+Epoch 20: Loss = 0.0094387922
+Epoch 30: Loss = 0.0062632132
+Epoch 40: Loss = 0.0060370215
+Epoch 50: Loss = 0.0209346376
+Epoch 60: Loss = 0.0045519839
+Epoch 70: Loss = 0.0015604662
+Epoch 80: Loss = 0.0082655037
+Target index 0, quantile 0.9, trial completed with loss: 0.077366
+Trial hyperparameters:
+  hidden_layers: [128]
+  dropout: 0.16673310402286914
+  activation: tanh
+  lr: 0.00016160031934475756
+  batch_size: 64
+Epoch 0: Loss = 0.0191601291
+Epoch 10: Loss = 0.0033294931
+Epoch 20: Loss = 0.0695749223
+Epoch 30: Loss = 0.0006647863
+Epoch 40: Loss = 0.0354603380
+Epoch 50: Loss = 0.0123613123
+Epoch 60: Loss = 0.0059928386
+Epoch 70: Loss = 0.0051403423
+Epoch 80: Loss = 0.0024478158
+Target index 0, quantile 0.9, trial completed with loss: 0.084245
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.17849955454427108
+  activation: relu
+  lr: 0.0005712820962512444
+  batch_size: 16
+Epoch 0: Loss = 0.1435817033
+Epoch 10: Loss = 0.0121370517
+Epoch 20: Loss = 0.0023314981
+Epoch 30: Loss = 0.0067841010
+Epoch 40: Loss = 0.0058283834
+Epoch 50: Loss = 0.0053170896
+Epoch 60: Loss = 0.0056435210
+Epoch 70: Loss = 0.0039001089
+Epoch 80: Loss = 0.0085640997
+Target index 0, quantile 0.9, trial completed with loss: 0.092111
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.14228775342277258
+  activation: relu
+  lr: 9.87070605291577e-05
+  batch_size: 32
+Epoch 0: Loss = 0.0039190566
+Epoch 10: Loss = 0.0081129353
+Epoch 20: Loss = 0.0018886684
+Epoch 30: Loss = 0.0122464001
+Epoch 40: Loss = 0.0086737191
+Epoch 50: Loss = 0.0039790100
+Epoch 60: Loss = 0.0071724150
+Epoch 70: Loss = 0.0023133440
+Epoch 80: Loss = 0.0019399130
+Target index 0, quantile 0.9, trial completed with loss: 0.078877
+Trial hyperparameters:
+  hidden_layers: [64, 64]
+  dropout: 0.14504267164068615
+  activation: relu
+  lr: 7.573990290971514e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0086449794
+Epoch 10: Loss = 0.0148199573
+Epoch 20: Loss = 0.0104257651
+Epoch 30: Loss = 0.0010845406
+Epoch 40: Loss = 0.0114505868
+Epoch 50: Loss = 0.0104195150
+Epoch 60: Loss = 0.0090263383
+Epoch 70: Loss = 0.0037214691
+Epoch 80: Loss = 0.0032209689
+Target index 0, quantile 0.9, trial completed with loss: 0.077559
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.05304972751222851
+  activation: relu
+  lr: 0.0003838795698763636
+  batch_size: 64
+Epoch 0: Loss = 0.0108889053
+Epoch 10: Loss = 0.0101692919
+Epoch 20: Loss = 0.0019303731
+Epoch 30: Loss = 0.0044642668
+Epoch 40: Loss = 0.0028601505
+Epoch 50: Loss = 0.0056632920
+Epoch 60: Loss = 0.0045445301
+Epoch 70: Loss = 0.0042920597
+Epoch 80: Loss = 0.0042956611
+Target index 0, quantile 0.9, trial completed with loss: 0.079264
+Trial hyperparameters:
+  hidden_layers: [128, 128]
+  dropout: 0.22126698964509045
+  activation: relu
+  lr: 0.0001441451179659948
+  batch_size: 64
+Best trial for target 'T_PM', quantile 0.9:
+  hidden_layers: [128]
+  dropout: 0.16673310402286914
+  activation: tanh
+  lr: 0.00016160031934475756
+  batch_size: 64
+
+Starting optimization for target 'c' (index 1), quantile 0.1
+Epoch 0: Loss = 0.0000990238
+Epoch 10: Loss = 0.0000142306
+Epoch 20: Loss = 0.0000183618
+Epoch 30: Loss = 0.0000297753
+Epoch 40: Loss = 0.0000551979
+Epoch 50: Loss = 0.0003245048
+Epoch 60: Loss = 0.0000113252
+Epoch 70: Loss = 0.0000269367
+Epoch 80: Loss = 0.0000686238
+Target index 1, quantile 0.1, trial completed with loss: 0.000360
+Trial hyperparameters:
+  hidden_layers: [128, 128]
+  dropout: 0.23393881661686103
+  activation: tanh
+  lr: 0.00026461353453694614
+  batch_size: 16
+Epoch 0: Loss = 0.0088399556
+Epoch 10: Loss = 0.0005488546
+Epoch 20: Loss = 0.0007133104
+Epoch 30: Loss = 0.0001441212
+Epoch 40: Loss = 0.0000321526
+Epoch 50: Loss = 0.0000267597
+Epoch 60: Loss = 0.0000127974
+Epoch 70: Loss = 0.0000061961
+Epoch 80: Loss = 0.0000640795
+Target index 1, quantile 0.1, trial completed with loss: 0.000269
+Trial hyperparameters:
+  hidden_layers: [64, 64]
+  dropout: 0.16367125514794284
+  activation: tanh
+  lr: 1.7804412381651377e-05
+  batch_size: 64
+Epoch 0: Loss = 0.0055690082
+Epoch 10: Loss = 0.0000121283
+Epoch 20: Loss = 0.0000377562
+Epoch 30: Loss = 0.0000152361
+Epoch 40: Loss = 0.0000242519
+Epoch 50: Loss = 0.0000230915
+Epoch 60: Loss = 0.0001089279
+Epoch 70: Loss = 0.0000181480
+Epoch 80: Loss = 0.0000064811
+Target index 1, quantile 0.1, trial completed with loss: 0.000245
+Trial hyperparameters:
+  hidden_layers: [128]
+  dropout: 0.2550478703488877
+  activation: relu
+  lr: 3.351756029959689e-05
+  batch_size: 64
+Epoch 0: Loss = 0.0003380437
+Epoch 10: Loss = 0.0000205130
+Epoch 20: Loss = 0.0000784594
+Epoch 30: Loss = 0.0000061367
+Epoch 40: Loss = 0.0000274013
+Epoch 50: Loss = 0.0000253011
+Epoch 60: Loss = 0.0000790332
+Epoch 70: Loss = 0.0000074236
+Epoch 80: Loss = 0.0000559429
+Target index 1, quantile 0.1, trial completed with loss: 0.000253
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.044042303296077945
+  activation: relu
+  lr: 0.00046175326517147784
+  batch_size: 32
+Epoch 0: Loss = 0.0000740410
+Epoch 10: Loss = 0.0000234818
+Epoch 20: Loss = 0.0000361675
+Epoch 30: Loss = 0.0000395142
+Epoch 40: Loss = 0.0000394009
+Epoch 50: Loss = 0.0000041459
+Epoch 60: Loss = 0.0000296044
+Epoch 70: Loss = 0.0000166034
+Epoch 80: Loss = 0.0000209596
+Target index 1, quantile 0.1, trial completed with loss: 0.000212
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.11941204179110329
+  activation: relu
+  lr: 0.00017018812323779846
+  batch_size: 16
+Epoch 0: Loss = 0.0061310851
+Epoch 10: Loss = 0.0003316351
+Epoch 20: Loss = 0.0002831882
+Epoch 30: Loss = 0.0000593358
+Epoch 40: Loss = 0.0000180206
+Epoch 50: Loss = 0.0000147231
+Epoch 60: Loss = 0.0000150834
+Epoch 70: Loss = 0.0000245943
+Epoch 80: Loss = 0.0000131885
+Target index 1, quantile 0.1, trial completed with loss: 0.000224
+Trial hyperparameters:
+  hidden_layers: [128]
+  dropout: 0.03732687876193591
+  activation: tanh
+  lr: 1.6660805726887153e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0015989747
+Epoch 10: Loss = 0.0000156329
+Epoch 20: Loss = 0.0000268431
+Epoch 30: Loss = 0.0000081604
+Epoch 40: Loss = 0.0000266290
+Epoch 50: Loss = 0.0000170406
+Epoch 60: Loss = 0.0000284589
+Epoch 70: Loss = 0.0000381832
+Epoch 80: Loss = 0.0000207452
+Target index 1, quantile 0.1, trial completed with loss: 0.000180
+Trial hyperparameters:
+  hidden_layers: [128, 128]
+  dropout: 0.11723010920663081
+  activation: tanh
+  lr: 7.158172542281408e-05
+  batch_size: 32
+Epoch 0: Loss = 0.0120353829
+Epoch 10: Loss = 0.0001953129
+Epoch 20: Loss = 0.0000883252
+Epoch 30: Loss = 0.0000785977
+Epoch 40: Loss = 0.0000243121
+Epoch 50: Loss = 0.0000304505
+Epoch 60: Loss = 0.0000176620
+Epoch 70: Loss = 0.0000108494
+Epoch 80: Loss = 0.0000097999
+Target index 1, quantile 0.1, trial completed with loss: 0.000353
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.1754405446297688
+  activation: tanh
+  lr: 2.3169783771430127e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0048869005
+Epoch 10: Loss = 0.0000206868
+Epoch 20: Loss = 0.0000058647
+Epoch 30: Loss = 0.0000844160
+Epoch 40: Loss = 0.0000250758
+Epoch 50: Loss = 0.0000280029
+Epoch 60: Loss = 0.0000442780
+Epoch 70: Loss = 0.0000253390
+Epoch 80: Loss = 0.0000170042
+Target index 1, quantile 0.1, trial completed with loss: 0.000355
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.09274599580928901
+  activation: tanh
+  lr: 3.357867745714624e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0001901598
+Epoch 10: Loss = 0.0000545587
+Epoch 20: Loss = 0.0000239386
+Epoch 30: Loss = 0.0000502641
+Epoch 40: Loss = 0.0000111069
+Epoch 50: Loss = 0.0000504201
+Epoch 60: Loss = 0.0000273740
+Epoch 70: Loss = 0.0000880604
+Epoch 80: Loss = 0.0000182102
+Target index 1, quantile 0.1, trial completed with loss: 0.000227
+Trial hyperparameters:
+  hidden_layers: [64, 64]
+  dropout: 0.28514390823272323
+  activation: relu
+  lr: 0.0005608205774128451
+  batch_size: 64
+Best trial for target 'c', quantile 0.1:
+  hidden_layers: [128, 128]
+  dropout: 0.11723010920663081
+  activation: tanh
+  lr: 7.158172542281408e-05
+  batch_size: 32
+
+Starting optimization for target 'c' (index 1), quantile 0.9
+Epoch 0: Loss = 0.0012001661
+Epoch 10: Loss = 0.0001155361
+Epoch 20: Loss = 0.0000394313
+Epoch 30: Loss = 0.0001051269
+Epoch 40: Loss = 0.0000249874
+Epoch 50: Loss = 0.0000219777
+Epoch 60: Loss = 0.0000313055
+Epoch 70: Loss = 0.0000101881
+Epoch 80: Loss = 0.0000144829
+Target index 1, quantile 0.9, trial completed with loss: 0.000303
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.0006307491551820532
+  activation: tanh
+  lr: 0.0003882342305901791
+  batch_size: 64
+Epoch 0: Loss = 0.0053678919
+Epoch 10: Loss = 0.0000855013
+Epoch 20: Loss = 0.0000611839
+Epoch 30: Loss = 0.0000752917
+Epoch 40: Loss = 0.0000073321
+Epoch 50: Loss = 0.0000193799
+Epoch 60: Loss = 0.0000181319
+Epoch 70: Loss = 0.0000233143
+Epoch 80: Loss = 0.0000806383
+Target index 1, quantile 0.9, trial completed with loss: 0.000233
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.2661905289630501
+  activation: tanh
+  lr: 1.3710884603983744e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0084099453
+Epoch 10: Loss = 0.0003380852
+Epoch 20: Loss = 0.0000759209
+Epoch 30: Loss = 0.0000084007
+Epoch 40: Loss = 0.0000358633
+Epoch 50: Loss = 0.0000147832
+Epoch 60: Loss = 0.0000077107
+Epoch 70: Loss = 0.0000134977
+Epoch 80: Loss = 0.0012337608
+Target index 1, quantile 0.9, trial completed with loss: 0.000240
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.16568414903523823
+  activation: tanh
+  lr: 1.995340658850331e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0005061047
+Epoch 10: Loss = 0.0000236298
+Epoch 20: Loss = 0.0000191608
+Epoch 30: Loss = 0.0000219759
+Epoch 40: Loss = 0.0000294533
+Epoch 50: Loss = 0.0000140421
+Epoch 60: Loss = 0.0000403418
+Epoch 70: Loss = 0.0000145550
+Epoch 80: Loss = 0.0000310117
+Target index 1, quantile 0.9, trial completed with loss: 0.000294
+Trial hyperparameters:
+  hidden_layers: [64]
+  dropout: 0.19586852219391918
+  activation: tanh
+  lr: 0.0003758473694400252
+  batch_size: 32
+Epoch 0: Loss = 0.0003117702
+Epoch 10: Loss = 0.0000065533
+Epoch 20: Loss = 0.0000259151
+Epoch 30: Loss = 0.0000114490
+Epoch 40: Loss = 0.0000116540
+Epoch 50: Loss = 0.0000044789
+Epoch 60: Loss = 0.0000154623
+Epoch 70: Loss = 0.0000083575
+Epoch 80: Loss = 0.0000251640
+Target index 1, quantile 0.9, trial completed with loss: 0.000229
+Trial hyperparameters:
+  hidden_layers: [64, 64]
+  dropout: 0.012881557886031425
+  activation: relu
+  lr: 9.13350185156702e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0014786081
+Epoch 10: Loss = 0.0000169501
+Epoch 20: Loss = 0.0000167022
+Epoch 30: Loss = 0.0000357171
+Epoch 40: Loss = 0.0000410492
+Epoch 50: Loss = 0.0000123479
+Epoch 60: Loss = 0.0000336133
+Epoch 70: Loss = 0.0000101219
+Epoch 80: Loss = 0.0000099159
+Target index 1, quantile 0.9, trial completed with loss: 0.000344
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.0664102225600488
+  activation: tanh
+  lr: 0.0003046243189869528
+  batch_size: 64
+Epoch 0: Loss = 0.0043731402
+Epoch 10: Loss = 0.0000062111
+Epoch 20: Loss = 0.0000092147
+Epoch 30: Loss = 0.0000110063
+Epoch 40: Loss = 0.0000080989
+Epoch 50: Loss = 0.0000042600
+Epoch 60: Loss = 0.0000116352
+Epoch 70: Loss = 0.0000104085
+Epoch 80: Loss = 0.0000079344
+Target index 1, quantile 0.9, trial completed with loss: 0.000187
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.04131490558178247
+  activation: relu
+  lr: 6.166967125151064e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0000187828
+Epoch 10: Loss = 0.0000401503
+Epoch 20: Loss = 0.0000987052
+Epoch 30: Loss = 0.0000238723
+Epoch 40: Loss = 0.0000220052
+Epoch 50: Loss = 0.0000086136
+Epoch 60: Loss = 0.0000194687
+Epoch 70: Loss = 0.0000110197
+Epoch 80: Loss = 0.0000207371
+Target index 1, quantile 0.9, trial completed with loss: 0.000422
+Trial hyperparameters:
+  hidden_layers: [128, 128]
+  dropout: 0.14641276094302827
+  activation: relu
+  lr: 0.0005091130727862929
+  batch_size: 32
+Epoch 0: Loss = 0.0177371912
+Epoch 10: Loss = 0.0007432457
+Epoch 20: Loss = 0.0000297193
+Epoch 30: Loss = 0.0000237787
+Epoch 40: Loss = 0.0000048444
+Epoch 50: Loss = 0.0000212320
+Epoch 60: Loss = 0.0000189182
+Epoch 70: Loss = 0.0000020095
+Epoch 80: Loss = 0.0000048503
+Target index 1, quantile 0.9, trial completed with loss: 0.000233
+Trial hyperparameters:
+  hidden_layers: [64, 64]
+  dropout: 0.2467379406965953
+  activation: tanh
+  lr: 1.4044883027042305e-05
+  batch_size: 32
+Epoch 0: Loss = 0.0012680003
+Epoch 10: Loss = 0.0000254649
+Epoch 20: Loss = 0.0000235752
+Epoch 30: Loss = 0.0000101716
+Epoch 40: Loss = 0.0000192419
+Epoch 50: Loss = 0.0000077360
+Epoch 60: Loss = 0.0000134566
+Epoch 70: Loss = 0.0000156743
+Epoch 80: Loss = 0.0000857243
+Target index 1, quantile 0.9, trial completed with loss: 0.000221
+Trial hyperparameters:
+  hidden_layers: [128, 64]
+  dropout: 0.08646237612247228
+  activation: tanh
+  lr: 8.991721859610836e-05
+  batch_size: 32
+Best trial for target 'c', quantile 0.9:
+  hidden_layers: [128, 64]
+  dropout: 0.04131490558178247
+  activation: relu
+  lr: 6.166967125151064e-05
+  batch_size: 16
+
+Starting optimization for target 'd10' (index 2), quantile 0.1
+Epoch 0: Loss = 0.0076390947
+Epoch 10: Loss = 0.0325704291
+Epoch 20: Loss = 0.0034431536
+Epoch 30: Loss = 0.0032602493
+Epoch 40: Loss = 0.0019188330
+Epoch 50: Loss = 0.0036293676
+Epoch 60: Loss = 0.0031506603
+Epoch 70: Loss = 0.0070406240
+Epoch 80: Loss = 0.0069217212
+Target index 2, quantile 0.1, trial completed with loss: 0.086060
+Trial hyperparameters:
+  hidden_layers: [128, 128]
+  dropout: 0.22621257084598898
+  activation: tanh
+  lr: 2.172914325189332e-05
+  batch_size: 16
+Epoch 0: Loss = 0.0072744261
+Epoch 10: Loss = 0.0061223172
+Epoch 20: Loss = 0.0047481852
+Epoch 30: Loss = 0.0019986900
+Epoch 40: Loss = 0.0003620073
+Epoch 50: Loss = 0.0054134456
+Epoch 60: Loss = 0.0036450857
+Epoch 70: Loss = 0.0043900893
+Epoch 80: Loss = 0.0026241988
+Target index 2, quantile 0.1, trial completed with loss: 0.037369
+Trial hyperparameters:
+  hidden_layers: [64, 64]
+  dropout: 0.07939908068132163
+  activation: relu
+  lr: 0.0002354161229021294
+  batch_size: 32
+Epoch 0: Loss = 0.0165245552
+Epoch 10: Loss = 0.0089520458
+Epoch 20: Loss = 0.0042352225
+Epoch 30: Loss = 0.0024323561
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_project\scripts\CQR\cqr_bayesian_optimization.py", line 71, in <module>
+    study = optuna.create_study(direction="minimize")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\study\study.py", line 489, in optimize
+    _optimize(
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\study\_optimize.py", line 64, in _optimize
+    _optimize_sequential(
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\study\_optimize.py", line 161, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\study\_optimize.py", line 253, in _run_trial
+    raise func_err
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\optuna\study\_optimize.py", line 201, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_project\scripts\CQR\cqr_bayesian_optimization.py", line 71, in <lambda>
+    study = optuna.create_study(direction="minimize")
+                                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_project\scripts\CQR\cqr_bayesian_optimization.py", line 37, in objective
+    
+    
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_project\scripts\ANN\ann.py", line 233, in train_narx_model
+    pred = model(xb)
+           ^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_project\scripts\ANN\ann.py", line 62, in forward
+    return self.model(x)
+           ^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\torch\nn\modules\container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\paulj\Documents\Uni\12. Semester\MLME\MLME_venv\Lib\site-packages\torch\nn\modules\linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
