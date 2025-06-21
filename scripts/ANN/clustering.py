@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,10 +7,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import DBSCAN
 
-from data_management import load_all_data
+from scripts.ANN.data_management import load_all_data
 
 
-def preprocess_data(data, plot=False):
+def preprocess_data(data, visuals_dir, plot=False):
     """
     Preprocess the data by scaling and applying PCA.
     
@@ -48,7 +49,7 @@ def preprocess_data(data, plot=False):
         plt.xlabel('Principal Component 1')
         plt.ylabel('Principal Component 2')
 
-        plt.savefig("./visuals/pca_results.svg")
+        plt.savefig(os.path.join(visuals_dir, "pca_results.svg"))
 
     return pca_data
 
@@ -74,7 +75,7 @@ def cluster_data(data, eps=0.3, min_samples=5):
     return data_clustered
 
 
-def plot_clusters(data, cluster_labels):
+def plot_clusters(data, visuals_dir, cluster_labels):
     """
     Plot the clusters in a 2D space.
 
@@ -85,8 +86,6 @@ def plot_clusters(data, cluster_labels):
     Returns:
     None: Displays the plot.
     """
-
-    visuals_dir = "./visuals"
 
     plt.figure(figsize=(10, 6))
 
@@ -123,16 +122,22 @@ def plot_clusters(data, cluster_labels):
     plt.savefig(f"{visuals_dir}/dbscan_clustering_results.svg")
 
 
-
-if __name__ == "__main__":
-    # Example usage
+def main():
+    # Load the data
     file_path = "./release/Data"
     data = load_all_data(file_path)
+
+    # Create visuals directory if it doesn't exist
+    visuals_dir = "./visuals/clustering"
+    if not os.path.exists(visuals_dir):
+        os.makedirs(visuals_dir)
+
+    # Check if data is loaded successfully
     if not data.empty:
         print("Data loaded successfully. Preprocessing data...")
 
         # Preprocess the data
-        preprocessed_data = preprocess_data(data, plot=True)
+        preprocessed_data = preprocess_data(data, visuals_dir, plot=True)
         print("Preprocessed Data:")
         print(preprocessed_data.head())
         print("Data preprocessing completed. Proceeding with clustering...")
@@ -147,7 +152,7 @@ if __name__ == "__main__":
 
         # Plot the clusters
         print("Plotting clusters...")
-        plot_clusters(preprocessed_data, cluster_labels)
+        plot_clusters(preprocessed_data, visuals_dir, cluster_labels)
         print("Clustering completed and plotted.")
 
         # Merge the cluster labels back to the original data
@@ -155,7 +160,11 @@ if __name__ == "__main__":
         raw_data_with_clusters = raw_data_with_clusters.sort_values(by=['trajectory_id', 'timestamp'])
 
         # Save the clustered data to a CSV file
-        raw_data_with_clusters.to_csv("./visuals/clustered_raw_data.csv", index=False)
-
+        raw_data_with_clusters.to_csv(os.path.join(visuals_dir, "clustered_raw_data.csv"), index=False)
     else:
         print("No data found or loaded.")
+
+
+
+if __name__ == "__main__":
+    main()

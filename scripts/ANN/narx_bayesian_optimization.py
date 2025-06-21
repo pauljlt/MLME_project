@@ -1,74 +1,63 @@
-import pandas as pd
-import numpy as np
-import torch
-import torch.nn as nn
-import optuna
+# scripts/ANN/narx_bayesian_optimization.py
+
 import os
 import sys
+import torch
+import optuna
+import numpy as np
+import pandas as pd
 
-from torch.utils.data import DataLoader, TensorDataset
-
-from ann import (
-    NARXNet,
+from scripts.ANN.ann import (
+    train_narx_model,
     create_narx_dataset_multi,
     prepare_data_multi,
     evaluate_model,
     split_data
 )
 
-sys.stdout = open("./visuals/narx_bayesian_optimization.log", "w")
+# Device configuration
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
 
-def train_narx_model(X, Y, input_size, output_size, hidden_layers, dropout, activation, epochs, batch_size, lr):
-    model = NARXNet(input_size, output_size, hidden_layers=hidden_layers, dropout=dropout, activation=activation)
-    criterion = nn.MSELoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+# Fixed configuration
+input_cols = ['mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']
+output_cols = ['T_PM', 'c', 'd10', 'd50', 'd90', 'T_TM']
 
-    X_tensor = torch.tensor(X, dtype=torch.float32)
-    Y_tensor = torch.tensor(Y, dtype=torch.float32)
-    dataset = TensorDataset(X_tensor, Y_tensor)
-    loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+# Load and split data
+df = pd.read_csv("./visuals/clustering/clustered_raw_data.csv")
+train_df, val_df, _ = split_data(df)
 
-    for epoch in range(epochs):
-        for xb, yb in loader:
-            pred = model(xb)
-            loss = criterion(pred, yb)
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
+# Create log file
+log_dir = "./visuals/bayezian_optimization"
+os.makedirs(log_dir, exist_ok=True)
+log_path = os.path.join(log_dir, "optimization_log.txt")
+log_file = open(log_path, "w")
 
-    return model
-
-def compute_rmse(y_true, y_pred):
-    return np.sqrt(np.mean((y_true - y_pred) ** 2))
-
+# Objective function for Optuna
 def objective(trial):
-    df = pd.read_csv("./visuals/clustered_raw_data.csv")
-    train_df, val_df, _ = split_data(df)
+    u_lag = y_lag = trial.suggest_int("lag", 3, 8)
 
-    input_cols = ['mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']
-    output_cols = ['T_PM', 'c', 'd10', 'd50', 'd90', 'T_TM']
+    # Preprocess
+    u_train, y_train, scaler_u, scaler_y = prepare_data_multi(train_df, input_cols, output_cols)
+    u_val, y_val, _, _ = prepare_data_multi(val_df, input_cols, output_cols, scaler_u, scaler_y)
+    x_train, y_train_target, _ = create_narx_dataset_multi(u_train, y_train, train_df['trajectory_id'].values, u_lag, y_lag)
+    x_val, y_val_target, _ = create_narx_dataset_multi(u_val, y_val, val_df['trajectory_id'].values, u_lag, y_lag)
 
-    # Hyperparameters
-    lag = trial.suggest_int("lag", 3, 8)
-    u_lag = y_lag = lag
     hidden_layers = trial.suggest_categorical("hidden_layers", [[64], [128], [64, 128], [128, 64], [128, 256, 128], [64, 128, 64]])
-    dropout = trial.suggest_float("dropout", 0.0, 0.4)
-    activation = trial.suggest_categorical("activation", ["relu", "tanh"])
+    dropout = trial.suggest_float("dropout", 0.0, 0.5)
+    activation = trial.suggest_categorical("activation", ['relu', 'tanh'])
+    epochs = trial.suggest_int("epochs", 50, 100, step=10)
     batch_size = trial.suggest_categorical("batch_size", [16, 32, 64])
-    lr = trial.suggest_float("lr", 1e-4, 0.1, log=True)
-    epochs = trial.suggest_int("epochs", 50, 150)
+    lr = trial.suggest_float("lr", 1e-5, 1e-2, log=True)
 
-    # Preprocessing
-    U_train, Y_train, scaler_u, scaler_y = prepare_data_multi(train_df, input_cols, output_cols)
-    X_train, Y_train_target = create_narx_dataset_multi(U_train, Y_train, train_df['trajectory_id'].values, u_lag, y_lag)
-
-    U_val, Y_val, _, _ = prepare_data_multi(val_df, input_cols, output_cols, scaler_u, scaler_y)
-    X_val, Y_val_target = create_narx_dataset_multi(U_val, Y_val, val_df['trajectory_id'].values, u_lag, y_lag)
+    print("\nTraining with hyperparameters:")
+    print(f"  lag={u_lag}, hidden_layers={hidden_layers}, dropout={dropout}, activation={activation}, epochs={epochs}, batch_size={batch_size}, lr={lr}")
+    print(f"  lag={u_lag}, hidden_layers={hidden_layers}, dropout={dropout}, activation={activation}, epochs={epochs}, batch_size={batch_size}, lr={lr}", file=log_file)
 
     model = train_narx_model(
-        X_train, Y_train_target,
-        input_size=X_train.shape[1],
-        output_size=Y_train_target.shape[1],
+        x_train, y_train_target,
+        input_size=x_train.shape[1],
+        output_size=y_train_target.shape[1],
         hidden_layers=hidden_layers,
         dropout=dropout,
         activation=activation,
@@ -77,17 +66,26 @@ def objective(trial):
         lr=lr
     )
 
-    y_true, y_pred = evaluate_model(model, X_val, Y_val_target, scaler_y)
-    rmse = compute_rmse(y_true, y_pred)
-    print(f"Trial {trial.number}: RMSE = {rmse:.4f} | Params: {trial.params}")
-    return rmse
+    y_val_true, y_val_pred = evaluate_model(model, x_val, y_val_target, scaler_y)
+    mse = np.mean((y_val_true - y_val_pred) ** 2)
+
+    # Log trial results
+    log_msg = f"Trial {trial.number}: MSE={mse:.6f}, Params={trial.params}"
+    print(log_msg)
+    print(log_msg, file=log_file)
+    log_file.flush()
+
+    return mse
 
 if __name__ == "__main__":
-    os.makedirs("./visuals", exist_ok=True)
     study = optuna.create_study(direction="minimize")
-    study.optimize(objective, n_trials=30)
+    study.optimize(objective, n_trials=50)
 
-    print("\nBest Trial:")
-    print(f"Value (RMSE): {study.best_trial.value:.4f}")
-    for k, v in study.best_trial.params.items():
-        print(f"  {k}: {v}")
+    print("Best trial:")
+    print(study.best_trial)
+    print("Best trial:", file=log_file)
+    print(study.best_trial, file=log_file)
+    log_file.close()
+
+    best_params = study.best_trial.params
+    pd.DataFrame([best_params]).to_csv(os.path.join(log_dir, "best_hyperparameters.csv"), index=False)

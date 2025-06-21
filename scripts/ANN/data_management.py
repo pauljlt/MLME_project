@@ -48,7 +48,7 @@ def load_all_data(directory):
         #save the data to a csv file
         combined_data = pd.concat(all_data, ignore_index=True)
         combined_data = combined_data.sort_values(by=['trajectory_id', 'timestamp']).reset_index(drop=True)
-        combined_data.to_csv(os.path.join("./visuals", "raw_data.csv"), index=False)
+        combined_data.to_csv(os.path.join("./visuals/data_management", "raw_data.csv"), index=False)
         return pd.concat(all_data, ignore_index=True)
     else:
         return pd.DataFrame()  # Return an empty DataFrame if no data was loaded
@@ -92,7 +92,9 @@ def plot_data(data):
     None: Displays plots of the data.
     """
 
-    visuals_dir = "./visuals"
+    visuals_dir = "./visuals/data_management"
+    if not os.path.exists(visuals_dir):
+        os.makedirs(visuals_dir)
 
     # histogram of the of the measurements
     data[['c', 'T_PM', 'd10', 'd50', 'd90', 'T_TM', 'mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']].hist(bins=50, figsize=(14,8))
@@ -159,14 +161,24 @@ def plot_data(data):
     plt.savefig(os.path.join(visuals_dir, "raw_data_scatter_plots.svg"))
 
 
-
-if __name__ == "__main__":
-    # Example usage
+def main():
+    # Load the data
     file_path = "./release/Data"
+
+    if not os.path.exists("./visuals/data_management"):
+        os.makedirs("./visuals/data_management")
+        
     data = load_all_data(file_path)
+
+    # Check if data is loaded successfully
     if not data.empty:
         print("Data loaded successfully.")
         analyze_data(data)
         plot_data(data)
     else:
         print("No data found or loaded.")
+
+
+
+if __name__ == "__main__":
+    main()

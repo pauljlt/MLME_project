@@ -14,22 +14,22 @@ To use the project, set up a virtual environment by running:
 
 - On Windows:
   ```bash
-  python -m venv ..\venv
+  python -m venv ..\MLME_venv
   ```
 - On macOS/Linux:
   ```bash
-  python3 -m venv ../venv
+  python3 -m venv ../MLME_venv
   ```
 
 To activate the environment:
 
 - On Windows:
   ```bash
-  ..\venv\Scripts\activate.bat
+  ..\MLME_venv\Scripts\activate.bat
   ```
 - On macOS/Linux (or Bash):
   ```bash
-  source ../venv/bin/activate
+  source ../MLME_venv/bin/activate
   ```
 
 ## Install Required Packages
@@ -91,8 +91,20 @@ For more details on using Git, check out this helpful video:
 
 First one needs to setup the venv and install the requirements like discribed above. To run any script please navigate to the 'MLME_project'-directory in your terminal and then execute the respective script.
 
-1. **Analyze and visualize the given data by executing 'data_management.py'.**
-2. **Cluster the data by executing 'clustering.py'.**
-3. **Setup and train the ANN by running 'ann.py'.**
-4. **If you want to optimize your hyperparameters by bayesian optimization, you can do so by running 'narx_bayesian_optimization.py'. Be carefull, since this needs a lot of computational power.**
-5. **TODO: CQRs**
+**Make sure to execut using following command structure, since functions get imported from other scripts in different folders within the project.***
+
+```bash
+python -m path.to.script
+```
+
+1. **Analyze and visualize** the given data by executing **'data_management.py'**.
+2. **Cluster** the data by executing **'clustering.py'**.
+3. **Setup and train the ANN** by running **'ann.py'**.
+4. If you want to **optimize your hyperparameters** by bayesian optimization, you can do so by running **'narx_bayesian_optimization.py'**. Be carefull, since this needs a lot of computational power. The standard hyperparameters (used if one changes nothing) are already optimized. See 'MLME_project/visuals/bayesian_optimization/optimization_log.txt' for logging.
+5. Run **'cqr.py'** for **Conformalized Quantile Regression (CQR)**. The hyperparameters of the models for each target value and each quantile respectively can be optimized by running 'cqr_bayesian_optimization.py'.
+
+
+## Beat-the-Felix
+
+1. Store your file in **MLME_projet/release/Beat-the-Felix** and rename it as **'file_btf.txt'**.
+2. Just run **'python -m scripts.beat_the_felix.main'** out of the './MLME_project'.

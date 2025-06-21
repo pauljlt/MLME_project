@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
+import joblib
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
@@ -9,8 +10,10 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 
-from data_management import analyze_data
+from scripts.ANN.data_management import analyze_data
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
 
 class NARXNet(nn.Module):
     """
@@ -107,9 +110,13 @@ def split_data(df):
     test_df = df[df['trajectory_id'].isin(test_ids)].copy() # Create DataFrame for testing based on trajectory_ids
 
     # Print dataframes to csv
-    train_df.to_csv("./visuals/train_data.csv", index=False)
-    val_df.to_csv("./visuals/val_data.csv", index=False)
-    test_df.to_csv("./visuals/test_data.csv", index=False)
+    output_dir = "./visuals/ann_data"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    train_df.to_csv(os.path.join(output_dir, "train_data.csv"), index=False)
+    val_df.to_csv(os.path.join(output_dir, "val_data.csv"), index=False)
+    test_df.to_csv(os.path.join(output_dir, "test_data.csv"), index=False)
 
     return train_df, val_df, test_df
 
@@ -187,7 +194,8 @@ def create_narx_dataset_multi(u, y, trajectory_ids, u_lag=3, y_lag=3):
     return np.array(x), np.array(y_out), np.array(meta_indices)
 
 
-def train_narx_model(X, Y, input_size, output_size, hidden_layers, dropout, activation, epochs=100, batch_size=32, lr=0.01):
+def train_narx_model(X, Y, input_size, output_size, hidden_layers, dropout, activation,
+                     epochs=100, batch_size=32, lr=0.01, loss_fn=None):
     """
     Train a NARX neural network with the given architecture and parameters.
 
@@ -202,29 +210,33 @@ def train_narx_model(X, Y, input_size, output_size, hidden_layers, dropout, acti
         epochs (int): Number of training epochs.
         batch_size (int): Batch size for training.
         lr (float): Learning rate.
+        loss_fn (callable, optional): Custom loss function (default: MSELoss).
 
     Returns:
         model (NARXNet): Trained PyTorch model.
     """
 
-    model = NARXNet(input_size, output_size, hidden_layers=hidden_layers, dropout=dropout, activation=activation)
-    criterion = nn.MSELoss()
+    model = NARXNet(input_size, output_size, hidden_layers=hidden_layers,
+                    dropout=dropout, activation=activation).to(device)
+    if loss_fn is None:
+        loss_fn = nn.MSELoss()
+
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
-    X_tensor = torch.tensor(X, dtype=torch.float32)
-    Y_tensor = torch.tensor(Y, dtype=torch.float32)
+    X_tensor = torch.tensor(X, dtype=torch.float32).to(device)
+    Y_tensor = torch.tensor(Y, dtype=torch.float32).to(device)
     dataset = TensorDataset(X_tensor, Y_tensor)
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
     for epoch in range(epochs):
         for xb, yb in loader:
             pred = model(xb)
-            loss = criterion(pred, yb)
+            loss = loss_fn(pred, yb)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
         if epoch % 10 == 0:
-            print(f"Epoch {epoch}: Loss = {loss.item():.5f}")
+            print(f"Epoch {epoch}: Loss = {loss.item():.10f}")
 
     return model
 
@@ -244,7 +256,7 @@ def evaluate_model(model, X, Y_true_scaled, scaler_output):
         Y_pred (np.ndarray): Original scale predicted outputs.
     """
     model.eval()
-    X_tensor = torch.tensor(X, dtype=torch.float32)
+    X_tensor = torch.tensor(X, dtype=torch.float32).to(device)
     with torch.no_grad():
         Y_pred_scaled = model(X_tensor).numpy()
     Y_pred = scaler_output.inverse_transform(Y_pred_scaled)
@@ -264,7 +276,9 @@ def plot_predictions(y_true, y_pred, feature_names, title="NARX Model Prediction
         title (str): Plot title.
     """
 
-    output_dir = "./visuals"
+    output_dir = "./visuals/ann_data"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     # All in one plot
     plt.figure(figsize=(16, 9))
@@ -314,11 +328,17 @@ def safe_residuals(y_true, y_pred, output_cols, meta=None, path="residuals.csv")
     df = pd.DataFrame(residuals, columns=[f"ε_{col}" for col in output_cols])
     if meta is not None:
         df = pd.concat([df.reset_index(drop=True), meta.reset_index(drop=True)], axis=1)
-    df.to_csv("./visuals/" + path, index=False)
+    df.to_csv("./visuals/ann_data/" + path, index=False)
 
 
-if __name__ == "__main__":
-    df = pd.read_csv("./visuals/clustered_raw_data.csv")
+def main():
+    # Load the clustered raw data
+    df = pd.read_csv("./visuals/clustering/clustered_raw_data.csv")
+
+    # Output directory for visuals
+    output_dir = "./visuals/ann_data"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     
     # Split the data into train, validation, and test sets
     train_df, val_df, test_df = split_data(df)
@@ -338,24 +358,28 @@ if __name__ == "__main__":
     lag = 5  # Number of lags for inputs and outputs
     u_lag, y_lag = lag, lag
 
+    # Prepare the data for training and validation
     U_train, Y_train, scaler_u, scaler_y = prepare_data_multi(train_df, input_cols, output_cols)
     X_train, Y_train_target, train_indices = create_narx_dataset_multi(U_train, Y_train, train_df['trajectory_id'].values, u_lag, y_lag)
 
     U_val, Y_val, _, _ = prepare_data_multi(val_df, input_cols, output_cols, scaler_u, scaler_y)
     X_val, Y_val_target, val_indices = create_narx_dataset_multi(U_val, Y_val, val_df['trajectory_id'].values, u_lag, y_lag)
 
+    # Train the NARX model
     model = train_narx_model(
         X_train, Y_train_target,
         input_size=X_train.shape[1],
         output_size=Y_train_target.shape[1],
-        hidden_layers=[64, 128],
-        dropout=0.05600712050613521,
+        hidden_layers=[64],
+        dropout=0.002385734308530012,
         activation='tanh',
-        epochs=140,
+        epochs=90,
         batch_size=32,
-        lr=0.0001079304727251836
+        lr=1.8382733654927772e-05,
+        loss_fn=None  # Use default MSELoss
     )
 
+    # Validate the model on the validation set
     y_true, y_pred = evaluate_model(model, X_val, Y_val_target, scaler_y)
     plot_predictions(y_true, y_pred, output_cols, title="NARX Model Validation Predictions")
 
@@ -374,3 +398,26 @@ if __name__ == "__main__":
     safe_residuals(y_train_true, y_train_pred, output_cols, meta=train_df.iloc[train_indices][['trajectory_id', 'timestamp','Cluster']], path="residuals_train.csv")
     safe_residuals(y_val_true, y_val_pred, output_cols, meta=val_df.iloc[val_indices][['trajectory_id', 'timestamp','Cluster']], path="residuals_val.csv")
     safe_residuals(y_test_true, y_test_pred, output_cols, meta=test_df.iloc[test_indices][['trajectory_id', 'timestamp','Cluster']], path="residuals_test.csv")
+
+    # Save the model
+    torch.save(model.state_dict(), os.path.join(output_dir, "narx_model.pth"))
+    
+    joblib.dump(scaler_u, os.path.join(output_dir, "scaler_u.pkl"))
+    joblib.dump(scaler_y, os.path.join(output_dir, "scaler_y.pkl"))
+
+    np.save(os.path.join(output_dir, "X_train.npy"), X_train)
+    np.save(os.path.join(output_dir, "X_val.npy"), X_val)
+    np.save(os.path.join(output_dir, "X_test.npy"), X_test)
+
+    np.save(os.path.join(output_dir, "y_true_train.npy"), y_train_true)
+    np.save(os.path.join(output_dir, "y_pred_train.npy"), y_train_pred)
+
+    np.save(os.path.join(output_dir, "y_true_val.npy"), y_val_true)
+    np.save(os.path.join(output_dir, "y_pred_val.npy"), y_val_pred)
+
+    np.save(os.path.join(output_dir, "y_true_test.npy"), y_test_true)
+    np.save(os.path.join(output_dir, "y_pred_test.npy"), y_test_pred)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,62 @@
+  lag=4, hidden_layers=[128, 64], dropout=0.008820829779702999, activation=tanh, epochs=80, batch_size=16, lr=0.0002037173710506175
+Trial 0: MSE=0.244552, Params={'lag': 4, 'hidden_layers': [128, 64], 'dropout': 0.008820829779702999, 'activation': 'tanh', 'epochs': 80, 'batch_size': 16, 'lr': 0.0002037173710506175}
+  lag=8, hidden_layers=[64], dropout=0.02685160379623469, activation=relu, epochs=80, batch_size=64, lr=0.0027093703274459996
+Trial 1: MSE=12.043727, Params={'lag': 8, 'hidden_layers': [64], 'dropout': 0.02685160379623469, 'activation': 'relu', 'epochs': 80, 'batch_size': 64, 'lr': 0.0027093703274459996}
+  lag=6, hidden_layers=[128, 64], dropout=0.16734341338098924, activation=tanh, epochs=80, batch_size=32, lr=0.006968723563502745
+Trial 2: MSE=5.546431, Params={'lag': 6, 'hidden_layers': [128, 64], 'dropout': 0.16734341338098924, 'activation': 'tanh', 'epochs': 80, 'batch_size': 32, 'lr': 0.006968723563502745}
+  lag=3, hidden_layers=[128], dropout=0.13219340128295187, activation=relu, epochs=80, batch_size=32, lr=8.830684564274942e-05
+Trial 3: MSE=0.102431, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.13219340128295187, 'activation': 'relu', 'epochs': 80, 'batch_size': 32, 'lr': 8.830684564274942e-05}
+  lag=8, hidden_layers=[128], dropout=0.06097590856299784, activation=tanh, epochs=70, batch_size=32, lr=0.005064091471520317
+Trial 4: MSE=15.066804, Params={'lag': 8, 'hidden_layers': [128], 'dropout': 0.06097590856299784, 'activation': 'tanh', 'epochs': 70, 'batch_size': 32, 'lr': 0.005064091471520317}
+  lag=6, hidden_layers=[64], dropout=0.22016161295695602, activation=tanh, epochs=60, batch_size=32, lr=0.0022535149674598087
+Trial 5: MSE=2.125618, Params={'lag': 6, 'hidden_layers': [64], 'dropout': 0.22016161295695602, 'activation': 'tanh', 'epochs': 60, 'batch_size': 32, 'lr': 0.0022535149674598087}
+  lag=4, hidden_layers=[64, 128, 64], dropout=0.47912689951814635, activation=relu, epochs=50, batch_size=16, lr=0.003180060279527637
+Trial 6: MSE=143.921418, Params={'lag': 4, 'hidden_layers': [64, 128, 64], 'dropout': 0.47912689951814635, 'activation': 'relu', 'epochs': 50, 'batch_size': 16, 'lr': 0.003180060279527637}
+  lag=3, hidden_layers=[128], dropout=0.009966744841023445, activation=relu, epochs=60, batch_size=64, lr=2.8390604458630123e-05
+Trial 7: MSE=0.087259, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.009966744841023445, 'activation': 'relu', 'epochs': 60, 'batch_size': 64, 'lr': 2.8390604458630123e-05}
+  lag=5, hidden_layers=[128, 64], dropout=0.32340038028951695, activation=relu, epochs=50, batch_size=64, lr=0.009088855387954916
+Trial 8: MSE=68.081177, Params={'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.32340038028951695, 'activation': 'relu', 'epochs': 50, 'batch_size': 64, 'lr': 0.009088855387954916}
+  lag=4, hidden_layers=[128, 256, 128], dropout=0.2857835158440324, activation=relu, epochs=50, batch_size=32, lr=3.48435999324817e-05
+Trial 9: MSE=42.019577, Params={'lag': 4, 'hidden_layers': [128, 256, 128], 'dropout': 0.2857835158440324, 'activation': 'relu', 'epochs': 50, 'batch_size': 32, 'lr': 3.48435999324817e-05}
+  lag=3, hidden_layers=[64, 128], dropout=0.3787293690131151, activation=relu, epochs=100, batch_size=64, lr=1.7407162798414406e-05
+Trial 10: MSE=2.076744, Params={'lag': 3, 'hidden_layers': [64, 128], 'dropout': 0.3787293690131151, 'activation': 'relu', 'epochs': 100, 'batch_size': 64, 'lr': 1.7407162798414406e-05}
+  lag=3, hidden_layers=[128], dropout=0.1335514479113005, activation=relu, epochs=70, batch_size=64, lr=9.342048194180462e-05
+Trial 11: MSE=0.118064, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.1335514479113005, 'activation': 'relu', 'epochs': 70, 'batch_size': 64, 'lr': 9.342048194180462e-05}
+  lag=3, hidden_layers=[128], dropout=0.10921745780220718, activation=relu, epochs=100, batch_size=32, lr=6.45060208420236e-05
+Trial 12: MSE=0.054343, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.10921745780220718, 'activation': 'relu', 'epochs': 100, 'batch_size': 32, 'lr': 6.45060208420236e-05}
+  lag=5, hidden_layers=[128], dropout=0.07457594043376548, activation=relu, epochs=100, batch_size=64, lr=1.1463299739441945e-05
+Trial 13: MSE=0.215932, Params={'lag': 5, 'hidden_layers': [128], 'dropout': 0.07457594043376548, 'activation': 'relu', 'epochs': 100, 'batch_size': 64, 'lr': 1.1463299739441945e-05}
+  lag=3, hidden_layers=[128], dropout=0.08742073339156003, activation=relu, epochs=90, batch_size=16, lr=0.0005667215316592723
+Trial 14: MSE=5.748070, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.08742073339156003, 'activation': 'relu', 'epochs': 90, 'batch_size': 16, 'lr': 0.0005667215316592723}
+  lag=7, hidden_layers=[64, 128], dropout=0.0002894836519091795, activation=relu, epochs=60, batch_size=32, lr=3.784083608202314e-05
+Trial 15: MSE=0.040994, Params={'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.0002894836519091795, 'activation': 'relu', 'epochs': 60, 'batch_size': 32, 'lr': 3.784083608202314e-05}
+  lag=7, hidden_layers=[64, 128], dropout=0.21476722195882805, activation=relu, epochs=90, batch_size=32, lr=0.0005757928981880361
+Trial 16: MSE=0.565958, Params={'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.21476722195882805, 'activation': 'relu', 'epochs': 90, 'batch_size': 32, 'lr': 0.0005757928981880361}
+  lag=7, hidden_layers=[64, 128], dropout=0.1474774601814202, activation=relu, epochs=60, batch_size=32, lr=6.0997200601714424e-05
+Trial 17: MSE=0.757546, Params={'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.1474774601814202, 'activation': 'relu', 'epochs': 60, 'batch_size': 32, 'lr': 6.0997200601714424e-05}
+  lag=7, hidden_layers=[128, 256, 128], dropout=0.09647209699539022, activation=tanh, epochs=90, batch_size=32, lr=0.00020434178965149448
+Trial 18: MSE=0.786037, Params={'lag': 7, 'hidden_layers': [128, 256, 128], 'dropout': 0.09647209699539022, 'activation': 'tanh', 'epochs': 90, 'batch_size': 32, 'lr': 0.00020434178965149448}
+  lag=6, hidden_layers=[64, 128, 64], dropout=0.49943408817097806, activation=relu, epochs=70, batch_size=32, lr=3.252795970274484e-05
+Trial 19: MSE=101.164859, Params={'lag': 6, 'hidden_layers': [64, 128, 64], 'dropout': 0.49943408817097806, 'activation': 'relu', 'epochs': 70, 'batch_size': 32, 'lr': 3.252795970274484e-05}
+  lag=5, hidden_layers=[64, 128], dropout=0.18712098660410387, activation=relu, epochs=100, batch_size=32, lr=0.00014511828517428785
+Trial 20: MSE=2.049448, Params={'lag': 5, 'hidden_layers': [64, 128], 'dropout': 0.18712098660410387, 'activation': 'relu', 'epochs': 100, 'batch_size': 32, 'lr': 0.00014511828517428785}
+  lag=4, hidden_layers=[128], dropout=0.006918571683763638, activation=relu, epochs=60, batch_size=64, lr=3.153611579829181e-05
+Trial 21: MSE=0.090920, Params={'lag': 4, 'hidden_layers': [128], 'dropout': 0.006918571683763638, 'activation': 'relu', 'epochs': 60, 'batch_size': 64, 'lr': 3.153611579829181e-05}
+  lag=3, hidden_layers=[128], dropout=0.04865606419728907, activation=relu, epochs=60, batch_size=64, lr=1.8122389362408763e-05
+Trial 22: MSE=0.200346, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.04865606419728907, 'activation': 'relu', 'epochs': 60, 'batch_size': 64, 'lr': 1.8122389362408763e-05}
+  lag=4, hidden_layers=[64, 128], dropout=0.10585733312022716, activation=relu, epochs=60, batch_size=16, lr=6.108481967292457e-05
+Trial 23: MSE=0.393367, Params={'lag': 4, 'hidden_layers': [64, 128], 'dropout': 0.10585733312022716, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 6.108481967292457e-05}
+  lag=7, hidden_layers=[128], dropout=0.03904090953978325, activation=relu, epochs=70, batch_size=32, lr=5.289468315076557e-05
+Trial 24: MSE=0.226151, Params={'lag': 7, 'hidden_layers': [128], 'dropout': 0.03904090953978325, 'activation': 'relu', 'epochs': 70, 'batch_size': 32, 'lr': 5.289468315076557e-05}
+  lag=8, hidden_layers=[64, 128, 64], dropout=0.051192262222543805, activation=relu, epochs=50, batch_size=64, lr=1.0273954844466203e-05
+Trial 25: MSE=0.794315, Params={'lag': 8, 'hidden_layers': [64, 128, 64], 'dropout': 0.051192262222543805, 'activation': 'relu', 'epochs': 50, 'batch_size': 64, 'lr': 1.0273954844466203e-05}
+  lag=5, hidden_layers=[64], dropout=0.001765048089935082, activation=tanh, epochs=60, batch_size=32, lr=1.829996364915579e-05
+Trial 26: MSE=0.032415, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.001765048089935082, 'activation': 'tanh', 'epochs': 60, 'batch_size': 32, 'lr': 1.829996364915579e-05}
+  lag=6, hidden_layers=[64], dropout=0.10925364239816782, activation=tanh, epochs=70, batch_size=32, lr=0.00041255520782958573
+Trial 27: MSE=0.074640, Params={'lag': 6, 'hidden_layers': [64], 'dropout': 0.10925364239816782, 'activation': 'tanh', 'epochs': 70, 'batch_size': 32, 'lr': 0.00041255520782958573}
+  lag=5, hidden_layers=[64], dropout=0.002385734308530012, activation=tanh, epochs=90, batch_size=32, lr=1.8382733654927772e-05
+Trial 28: MSE=0.020817, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.002385734308530012, 'activation': 'tanh', 'epochs': 90, 'batch_size': 32, 'lr': 1.8382733654927772e-05}
+  lag=5, hidden_layers=[64], dropout=0.00553855954245769, activation=tanh, epochs=90, batch_size=16, lr=1.8105161846542106e-05
+Trial 29: MSE=0.028011, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.00553855954245769, 'activation': 'tanh', 'epochs': 90, 'batch_size': 16, 'lr': 1.8105161846542106e-05}
+Best trial:
+FrozenTrial(number=28, state=1, values=[0.02081745224710657], datetime_start=datetime.datetime(2025, 6, 20, 20, 47, 35, 795397), datetime_complete=datetime.datetime(2025, 6, 20, 20, 49, 41, 508026), params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.002385734308530012, 'activation': 'tanh', 'epochs': 90, 'batch_size': 32, 'lr': 1.8382733654927772e-05}, user_attrs={}, system_attrs={}, intermediate_values={}, distributions={'lag': IntDistribution(high=8, log=False, low=3, step=1), 'hidden_layers': CategoricalDistribution(choices=([64], [128], [64, 128], [128, 64], [128, 256, 128], [64, 128, 64])), 'dropout': FloatDistribution(high=0.5, log=False, low=0.0, step=None), 'activation': CategoricalDistribution(choices=('relu', 'tanh')), 'epochs': IntDistribution(high=100, log=False, low=50, step=10), 'batch_size': CategoricalDistribution(choices=(16, 32, 64)), 'lr': FloatDistribution(high=0.01, log=True, low=1e-05, step=None)}, trial_id=28, value=None)
