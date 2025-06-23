@@ -48,10 +48,32 @@ y_true_test = np.load(os.path.join(visuals_dir, "y_true_test.npy")) # y_true_tes
 
 # Pinball loss
 def pinball_loss(pred, target, alpha):
+    """
+    Calculates the pinball loss for quantile regression.
+    
+    Args:
+        pred (torch.Tensor): Predicted values.
+        target (torch.Tensor): True values.
+        alpha (float): Quantile level (between 0 and 1).
+
+    Returns:
+        torch.Tensor: Computed pinball loss.
+    """
+
     error = target - pred
     return torch.mean(torch.where(error >= 0, alpha * error, (alpha - 1) * error))
 
 def evaluate_cqr_on_errors(train=True):
+    """
+    Evaluate Conformal Quantile Regression (CQR) on prediction errors.
+
+    Args:
+        train (bool): If True, trains the models; if False, loads existing models.
+
+    Returns:
+        None
+    """
+    
     results = []
     conformity_vals = {}
 

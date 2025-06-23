@@ -1,0 +1,197 @@
+Using device: cpu
+Using device: cpu
+
+Processing T_PM…
+Training q=0.1
+Epoch 0: Loss = 0.0072049964
+Epoch 10: Loss = 0.0124864699
+Epoch 20: Loss = 0.0129622295
+Epoch 30: Loss = 0.3258473873
+Epoch 40: Loss = 0.0128700268
+Epoch 50: Loss = 0.0149512151
+Epoch 60: Loss = 0.0121629396
+Epoch 70: Loss = 0.0068105124
+Epoch 80: Loss = 0.0183703005
+Epoch 90: Loss = 0.0429412313
+Training q=0.9
+Epoch 0: Loss = 0.0135489078
+Epoch 10: Loss = 0.0105449557
+Epoch 20: Loss = 0.0033159086
+Epoch 30: Loss = 0.0064357799
+Epoch 40: Loss = 0.0028728601
+Epoch 50: Loss = 0.0087418677
+Epoch 60: Loss = 0.0357994065
+Epoch 70: Loss = 0.0151785035
+Epoch 80: Loss = 0.0023746423
+Epoch 90: Loss = 0.0055188844
+Conformity Q=0.02022
+Mean spread for T_PM: 0.1249
+q0.1 range: -1.748 to 0.494
+q0.9 range: -0.659 to 1.028
+c min/max: 0.1504738220084355 0.1892742516561285
+T_TM min/max: 296.4466639645958 318.7373511835834
+Coverage: 0.212, Width: 0.165
+
+Processing c…
+Training q=0.1
+Epoch 0: Loss = 0.0006433267
+Epoch 10: Loss = 0.0000319337
+Epoch 20: Loss = 0.0000173449
+Epoch 30: Loss = 0.0000213735
+Epoch 40: Loss = 0.0000217231
+Epoch 50: Loss = 0.0000198053
+Epoch 60: Loss = 0.0000129079
+Epoch 70: Loss = 0.0000027893
+Epoch 80: Loss = 0.0000166244
+Epoch 90: Loss = 0.0000107047
+Training q=0.9
+Epoch 0: Loss = 0.0016364004
+Epoch 10: Loss = 0.0000104289
+Epoch 20: Loss = 0.0000316337
+Epoch 30: Loss = 0.0000089184
+Epoch 40: Loss = 0.0000142231
+Epoch 50: Loss = 0.0000275426
+Epoch 60: Loss = 0.0000240044
+Epoch 70: Loss = 0.0000218157
+Epoch 80: Loss = 0.0000025993
+Epoch 90: Loss = 0.0000113170
+Conformity Q=0.00000
+Mean spread for c: 0.0005
+q0.1 range: -0.001 to 0.001
+q0.9 range: -0.001 to 0.002
+c min/max: 0.1504738220084355 0.1892742516561285
+T_TM min/max: 296.4466639645958 318.7373511835834
+Coverage: 0.679, Width: 0.000
+
+Processing d10…
+Training q=0.1
+Epoch 0: Loss = 0.0118013658
+Epoch 10: Loss = 0.0114207547
+Epoch 20: Loss = 0.0097770756
+Epoch 30: Loss = 0.0300839841
+Epoch 40: Loss = 0.0052750218
+Epoch 50: Loss = 0.0045311740
+Epoch 60: Loss = 0.0063110590
+Epoch 70: Loss = 0.0084864162
+Epoch 80: Loss = 0.0015931444
+Epoch 90: Loss = 0.0088447789
+Training q=0.9
+Epoch 0: Loss = 0.0105383182
+Epoch 10: Loss = 0.0099093355
+Epoch 20: Loss = 0.0046292949
+Epoch 30: Loss = 0.0050240816
+Epoch 40: Loss = 0.0040129614
+Epoch 50: Loss = 0.0080305198
+Epoch 60: Loss = 0.0021269340
+Epoch 70: Loss = 0.0029210623
+Epoch 80: Loss = 0.0048571154
+Epoch 90: Loss = 0.0030548424
+Conformity Q=0.02274
+Mean spread for d10: 0.1674
+q0.1 range: -1.037 to 0.817
+q0.9 range: -0.888 to 1.042
+c min/max: 0.1504738220084355 0.1892742516561285
+T_TM min/max: 296.4466639645958 318.7373511835834
+Coverage: 0.300, Width: 0.213
+
+Processing d50…
+Training q=0.1
+Epoch 0: Loss = 0.0056240652
+Epoch 10: Loss = 0.0053396942
+Epoch 20: Loss = 0.0069810320
+Epoch 30: Loss = 0.0244109072
+Epoch 40: Loss = 0.0033410711
+Epoch 50: Loss = 0.0088482043
+Epoch 60: Loss = 0.0044577699
+Epoch 70: Loss = 0.0049679568
+Epoch 80: Loss = 0.0035477639
+Epoch 90: Loss = 0.0041656578
+Training q=0.9
+Epoch 0: Loss = 0.0064370912
+Epoch 10: Loss = 0.0053491932
+Epoch 20: Loss = 0.0045296815
+Epoch 30: Loss = 0.0047581140
+Epoch 40: Loss = 0.0037084089
+Epoch 50: Loss = 0.0280039050
+Epoch 60: Loss = 0.0101921372
+Epoch 70: Loss = 0.0039300881
+Epoch 80: Loss = 0.0048678881
+Epoch 90: Loss = 0.0480781198
+Conformity Q=0.00000
+Mean spread for d50: 0.2119
+q0.1 range: -1.699 to 0.937
+q0.9 range: -1.268 to 1.342
+c min/max: 0.1504738220084355 0.1892742516561285
+T_TM min/max: 296.4466639645958 318.7373511835834
+Coverage: 0.259, Width: 0.212
+
+Processing d90…
+Training q=0.1
+Epoch 0: Loss = 0.0229970422
+Epoch 10: Loss = 0.0060985060
+Epoch 20: Loss = 0.0038716453
+Epoch 30: Loss = 0.0265580006
+Epoch 40: Loss = 0.0068110744
+Epoch 50: Loss = 0.0262853578
+Epoch 60: Loss = 0.0015339009
+Epoch 70: Loss = 0.0062027099
+Epoch 80: Loss = 0.0032227156
+Epoch 90: Loss = 0.0063665737
+Training q=0.9
+Epoch 0: Loss = 0.0096653858
+Epoch 10: Loss = 0.2784599662
+Epoch 20: Loss = 0.0092437528
+Epoch 30: Loss = 0.0422053225
+Epoch 40: Loss = 0.0273853522
+Epoch 50: Loss = 0.0065857396
+Epoch 60: Loss = 0.0078775277
+Epoch 70: Loss = 0.0073505668
+Epoch 80: Loss = 0.0045621321
+Epoch 90: Loss = 0.0033459119
+Conformity Q=0.00000
+Mean spread for d90: 0.2293
+q0.1 range: -1.136 to 1.296
+q0.9 range: -0.743 to 1.090
+c min/max: 0.1504738220084355 0.1892742516561285
+T_TM min/max: 296.4466639645958 318.7373511835834
+Coverage: 0.419, Width: 0.229
+
+Processing T_TM…
+Training q=0.1
+Epoch 0: Loss = 0.0075958990
+Epoch 10: Loss = 0.0076289885
+Epoch 20: Loss = 0.0111642862
+Epoch 30: Loss = 0.0052663493
+Epoch 40: Loss = 0.0024751821
+Epoch 50: Loss = 0.0044656093
+Epoch 60: Loss = 0.5871346593
+Epoch 70: Loss = 0.0098651238
+Epoch 80: Loss = 0.0115809767
+Epoch 90: Loss = 0.0051260339
+Training q=0.9
+Epoch 0: Loss = 0.0081294682
+Epoch 10: Loss = 0.0052944440
+Epoch 20: Loss = 0.0110954279
+Epoch 30: Loss = 0.0040239189
+Epoch 40: Loss = 0.0103053926
+Epoch 50: Loss = 0.0089713121
+Epoch 60: Loss = 0.0103725847
+Epoch 70: Loss = 0.0054317848
+Epoch 80: Loss = 0.0173298921
+Epoch 90: Loss = 0.0069661927
+Conformity Q=0.00685
+Mean spread for T_TM: 0.1354
+q0.1 range: -2.058 to 0.442
+q0.9 range: -0.571 to 1.013
+c min/max: 0.1504738220084355 0.1892742516561285
+T_TM min/max: 296.4466639645958 318.7373511835834
+Coverage: 0.186, Width: 0.149
+
+CQR on errors done:
+   target  coverage  interval_width
+0   T_PM     0.212           0.165
+1      c     0.679           0.000
+2    d10     0.300           0.213
+3    d50     0.259           0.212
+4    d90     0.419           0.229
+5   T_TM     0.186           0.149
