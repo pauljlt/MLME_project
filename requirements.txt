@@ -1,8 +1,9 @@
-pandas == 2.2.3
 glob2 == 0.7
-numpy == 1.26.4
+joblib == 1.5.1
 matplotlib == 3.10.3
+numpy == 1.26.4
+optuna == 4.4.0
+pandas == 2.2.3
 scikit-learn == 1.7.0
 scipy == 1.15.3
-torch == 2.3.0
-optuna == 4.4.0
+torch == 2.3.0 # 2.2.2 on macOS
