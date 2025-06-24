@@ -23,8 +23,11 @@ print(f"Using device: {device}")
 input_cols = ['mf_PM', 'mf_TM', 'Q_g', 'w_crystal', 'c_in', 'T_PM_in', 'T_TM_in']
 output_cols = ['T_PM', 'c', 'd10', 'd50', 'd90', 'T_TM']
 
-# Load and split data
+# Load, filter and split data
 df = pd.read_csv("./visuals/clustering/clustered_raw_data.csv")
+df = df[df['Cluster'] != -1] # Filter out rows where Cluster is -1 (noise in DBSCAN clustering)
+df = df[df['Cluster'] != 2] # Filter out rows where Cluster is 2 (outliers in DBSCAN clustering, d10, d50, d90 are all way too high)
+df = df[df['Cluster'] != 3] # Filter out rows where Cluster is 3 (outliers in DBSCAN clustering, d10, d50, d90 are all way too high)
 train_df, val_df, _ = split_data(df)
 
 # Create log file

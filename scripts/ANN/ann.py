@@ -74,8 +74,11 @@ def split_data(df):
         test_df (pd.DataFrame): DataFrame for testing.
     """
 
-    # Filter noise
-    df = df[df['Cluster'] != -1]
+    # Filter
+    df = df[df['Cluster'] != -1] # Filter out rows where Cluster is -1 (noise in DBSCAN clustering)
+    df = df[df['Cluster'] != 2] # Filter out rows where Cluster is 2 (outliers in DBSCAN clustering, d10, d50, d90 are all way too high)
+    df = df[df['Cluster'] != 3] # Filter out rows where Cluster is 3 (outliers in DBSCAN clustering, d10, d50, d90 are all way too high)
+    
 
     # Split the data into train, validation, and test sets with respect to the trajectory_id and the Cluster
     trajectory_clusters = df.groupby('trajectory_id')['Cluster'].last() # Get the cluster for each trajectory_id
@@ -371,11 +374,11 @@ def main():
         input_size=X_train.shape[1],
         output_size=Y_train_target.shape[1],
         hidden_layers=[64],
-        dropout=0.002385734308530012,
-        activation='tanh',
-        epochs=90,
-        batch_size=32,
-        lr=1.8382733654927772e-05,
+        dropout=5.3098337188695055e-05,
+        activation='relu',
+        epochs=60,
+        batch_size=16,
+        lr=7.023694002448674e-05,
         loss_fn=None  # Use default MSELoss
     )
 

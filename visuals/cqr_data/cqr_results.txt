@@ -1,0 +1,26 @@
+Conformal Quantile Regression Results
+========================================
+Target: T_PM
+  Coverage:       0.443
+  Interval Width: 0.133
+----------------------------------------
+Target: c
+  Coverage:       0.818
+  Interval Width: 0.001
+----------------------------------------
+Target: d10
+  Coverage:       0.772
+  Interval Width: 0.001
+----------------------------------------
+Target: d50
+  Coverage:       0.973
+  Interval Width: 0.002
+----------------------------------------
+Target: d90
+  Coverage:       0.763
+  Interval Width: 0.001
+----------------------------------------
+Target: T_TM
+  Coverage:       0.512
+  Interval Width: 0.134
+----------------------------------------
