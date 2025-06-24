@@ -1,62 +1,102 @@
-  lag=4, hidden_layers=[128, 64], dropout=0.008820829779702999, activation=tanh, epochs=80, batch_size=16, lr=0.0002037173710506175
-Trial 0: MSE=0.244552, Params={'lag': 4, 'hidden_layers': [128, 64], 'dropout': 0.008820829779702999, 'activation': 'tanh', 'epochs': 80, 'batch_size': 16, 'lr': 0.0002037173710506175}
-  lag=8, hidden_layers=[64], dropout=0.02685160379623469, activation=relu, epochs=80, batch_size=64, lr=0.0027093703274459996
-Trial 1: MSE=12.043727, Params={'lag': 8, 'hidden_layers': [64], 'dropout': 0.02685160379623469, 'activation': 'relu', 'epochs': 80, 'batch_size': 64, 'lr': 0.0027093703274459996}
-  lag=6, hidden_layers=[128, 64], dropout=0.16734341338098924, activation=tanh, epochs=80, batch_size=32, lr=0.006968723563502745
-Trial 2: MSE=5.546431, Params={'lag': 6, 'hidden_layers': [128, 64], 'dropout': 0.16734341338098924, 'activation': 'tanh', 'epochs': 80, 'batch_size': 32, 'lr': 0.006968723563502745}
-  lag=3, hidden_layers=[128], dropout=0.13219340128295187, activation=relu, epochs=80, batch_size=32, lr=8.830684564274942e-05
-Trial 3: MSE=0.102431, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.13219340128295187, 'activation': 'relu', 'epochs': 80, 'batch_size': 32, 'lr': 8.830684564274942e-05}
-  lag=8, hidden_layers=[128], dropout=0.06097590856299784, activation=tanh, epochs=70, batch_size=32, lr=0.005064091471520317
-Trial 4: MSE=15.066804, Params={'lag': 8, 'hidden_layers': [128], 'dropout': 0.06097590856299784, 'activation': 'tanh', 'epochs': 70, 'batch_size': 32, 'lr': 0.005064091471520317}
-  lag=6, hidden_layers=[64], dropout=0.22016161295695602, activation=tanh, epochs=60, batch_size=32, lr=0.0022535149674598087
-Trial 5: MSE=2.125618, Params={'lag': 6, 'hidden_layers': [64], 'dropout': 0.22016161295695602, 'activation': 'tanh', 'epochs': 60, 'batch_size': 32, 'lr': 0.0022535149674598087}
-  lag=4, hidden_layers=[64, 128, 64], dropout=0.47912689951814635, activation=relu, epochs=50, batch_size=16, lr=0.003180060279527637
-Trial 6: MSE=143.921418, Params={'lag': 4, 'hidden_layers': [64, 128, 64], 'dropout': 0.47912689951814635, 'activation': 'relu', 'epochs': 50, 'batch_size': 16, 'lr': 0.003180060279527637}
-  lag=3, hidden_layers=[128], dropout=0.009966744841023445, activation=relu, epochs=60, batch_size=64, lr=2.8390604458630123e-05
-Trial 7: MSE=0.087259, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.009966744841023445, 'activation': 'relu', 'epochs': 60, 'batch_size': 64, 'lr': 2.8390604458630123e-05}
-  lag=5, hidden_layers=[128, 64], dropout=0.32340038028951695, activation=relu, epochs=50, batch_size=64, lr=0.009088855387954916
-Trial 8: MSE=68.081177, Params={'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.32340038028951695, 'activation': 'relu', 'epochs': 50, 'batch_size': 64, 'lr': 0.009088855387954916}
-  lag=4, hidden_layers=[128, 256, 128], dropout=0.2857835158440324, activation=relu, epochs=50, batch_size=32, lr=3.48435999324817e-05
-Trial 9: MSE=42.019577, Params={'lag': 4, 'hidden_layers': [128, 256, 128], 'dropout': 0.2857835158440324, 'activation': 'relu', 'epochs': 50, 'batch_size': 32, 'lr': 3.48435999324817e-05}
-  lag=3, hidden_layers=[64, 128], dropout=0.3787293690131151, activation=relu, epochs=100, batch_size=64, lr=1.7407162798414406e-05
-Trial 10: MSE=2.076744, Params={'lag': 3, 'hidden_layers': [64, 128], 'dropout': 0.3787293690131151, 'activation': 'relu', 'epochs': 100, 'batch_size': 64, 'lr': 1.7407162798414406e-05}
-  lag=3, hidden_layers=[128], dropout=0.1335514479113005, activation=relu, epochs=70, batch_size=64, lr=9.342048194180462e-05
-Trial 11: MSE=0.118064, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.1335514479113005, 'activation': 'relu', 'epochs': 70, 'batch_size': 64, 'lr': 9.342048194180462e-05}
-  lag=3, hidden_layers=[128], dropout=0.10921745780220718, activation=relu, epochs=100, batch_size=32, lr=6.45060208420236e-05
-Trial 12: MSE=0.054343, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.10921745780220718, 'activation': 'relu', 'epochs': 100, 'batch_size': 32, 'lr': 6.45060208420236e-05}
-  lag=5, hidden_layers=[128], dropout=0.07457594043376548, activation=relu, epochs=100, batch_size=64, lr=1.1463299739441945e-05
-Trial 13: MSE=0.215932, Params={'lag': 5, 'hidden_layers': [128], 'dropout': 0.07457594043376548, 'activation': 'relu', 'epochs': 100, 'batch_size': 64, 'lr': 1.1463299739441945e-05}
-  lag=3, hidden_layers=[128], dropout=0.08742073339156003, activation=relu, epochs=90, batch_size=16, lr=0.0005667215316592723
-Trial 14: MSE=5.748070, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.08742073339156003, 'activation': 'relu', 'epochs': 90, 'batch_size': 16, 'lr': 0.0005667215316592723}
-  lag=7, hidden_layers=[64, 128], dropout=0.0002894836519091795, activation=relu, epochs=60, batch_size=32, lr=3.784083608202314e-05
-Trial 15: MSE=0.040994, Params={'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.0002894836519091795, 'activation': 'relu', 'epochs': 60, 'batch_size': 32, 'lr': 3.784083608202314e-05}
-  lag=7, hidden_layers=[64, 128], dropout=0.21476722195882805, activation=relu, epochs=90, batch_size=32, lr=0.0005757928981880361
-Trial 16: MSE=0.565958, Params={'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.21476722195882805, 'activation': 'relu', 'epochs': 90, 'batch_size': 32, 'lr': 0.0005757928981880361}
-  lag=7, hidden_layers=[64, 128], dropout=0.1474774601814202, activation=relu, epochs=60, batch_size=32, lr=6.0997200601714424e-05
-Trial 17: MSE=0.757546, Params={'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.1474774601814202, 'activation': 'relu', 'epochs': 60, 'batch_size': 32, 'lr': 6.0997200601714424e-05}
-  lag=7, hidden_layers=[128, 256, 128], dropout=0.09647209699539022, activation=tanh, epochs=90, batch_size=32, lr=0.00020434178965149448
-Trial 18: MSE=0.786037, Params={'lag': 7, 'hidden_layers': [128, 256, 128], 'dropout': 0.09647209699539022, 'activation': 'tanh', 'epochs': 90, 'batch_size': 32, 'lr': 0.00020434178965149448}
-  lag=6, hidden_layers=[64, 128, 64], dropout=0.49943408817097806, activation=relu, epochs=70, batch_size=32, lr=3.252795970274484e-05
-Trial 19: MSE=101.164859, Params={'lag': 6, 'hidden_layers': [64, 128, 64], 'dropout': 0.49943408817097806, 'activation': 'relu', 'epochs': 70, 'batch_size': 32, 'lr': 3.252795970274484e-05}
-  lag=5, hidden_layers=[64, 128], dropout=0.18712098660410387, activation=relu, epochs=100, batch_size=32, lr=0.00014511828517428785
-Trial 20: MSE=2.049448, Params={'lag': 5, 'hidden_layers': [64, 128], 'dropout': 0.18712098660410387, 'activation': 'relu', 'epochs': 100, 'batch_size': 32, 'lr': 0.00014511828517428785}
-  lag=4, hidden_layers=[128], dropout=0.006918571683763638, activation=relu, epochs=60, batch_size=64, lr=3.153611579829181e-05
-Trial 21: MSE=0.090920, Params={'lag': 4, 'hidden_layers': [128], 'dropout': 0.006918571683763638, 'activation': 'relu', 'epochs': 60, 'batch_size': 64, 'lr': 3.153611579829181e-05}
-  lag=3, hidden_layers=[128], dropout=0.04865606419728907, activation=relu, epochs=60, batch_size=64, lr=1.8122389362408763e-05
-Trial 22: MSE=0.200346, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.04865606419728907, 'activation': 'relu', 'epochs': 60, 'batch_size': 64, 'lr': 1.8122389362408763e-05}
-  lag=4, hidden_layers=[64, 128], dropout=0.10585733312022716, activation=relu, epochs=60, batch_size=16, lr=6.108481967292457e-05
-Trial 23: MSE=0.393367, Params={'lag': 4, 'hidden_layers': [64, 128], 'dropout': 0.10585733312022716, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 6.108481967292457e-05}
-  lag=7, hidden_layers=[128], dropout=0.03904090953978325, activation=relu, epochs=70, batch_size=32, lr=5.289468315076557e-05
-Trial 24: MSE=0.226151, Params={'lag': 7, 'hidden_layers': [128], 'dropout': 0.03904090953978325, 'activation': 'relu', 'epochs': 70, 'batch_size': 32, 'lr': 5.289468315076557e-05}
-  lag=8, hidden_layers=[64, 128, 64], dropout=0.051192262222543805, activation=relu, epochs=50, batch_size=64, lr=1.0273954844466203e-05
-Trial 25: MSE=0.794315, Params={'lag': 8, 'hidden_layers': [64, 128, 64], 'dropout': 0.051192262222543805, 'activation': 'relu', 'epochs': 50, 'batch_size': 64, 'lr': 1.0273954844466203e-05}
-  lag=5, hidden_layers=[64], dropout=0.001765048089935082, activation=tanh, epochs=60, batch_size=32, lr=1.829996364915579e-05
-Trial 26: MSE=0.032415, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.001765048089935082, 'activation': 'tanh', 'epochs': 60, 'batch_size': 32, 'lr': 1.829996364915579e-05}
-  lag=6, hidden_layers=[64], dropout=0.10925364239816782, activation=tanh, epochs=70, batch_size=32, lr=0.00041255520782958573
-Trial 27: MSE=0.074640, Params={'lag': 6, 'hidden_layers': [64], 'dropout': 0.10925364239816782, 'activation': 'tanh', 'epochs': 70, 'batch_size': 32, 'lr': 0.00041255520782958573}
-  lag=5, hidden_layers=[64], dropout=0.002385734308530012, activation=tanh, epochs=90, batch_size=32, lr=1.8382733654927772e-05
-Trial 28: MSE=0.020817, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.002385734308530012, 'activation': 'tanh', 'epochs': 90, 'batch_size': 32, 'lr': 1.8382733654927772e-05}
-  lag=5, hidden_layers=[64], dropout=0.00553855954245769, activation=tanh, epochs=90, batch_size=16, lr=1.8105161846542106e-05
-Trial 29: MSE=0.028011, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.00553855954245769, 'activation': 'tanh', 'epochs': 90, 'batch_size': 16, 'lr': 1.8105161846542106e-05}
+  lag=6, hidden_layers=[128, 64], dropout=0.27192405911824874, activation=tanh, epochs=80, batch_size=64, lr=0.0006538962235613246
+Trial 0: MSE=0.032879, Params={'lag': 6, 'hidden_layers': [128, 64], 'dropout': 0.27192405911824874, 'activation': 'tanh', 'epochs': 80, 'batch_size': 64, 'lr': 0.0006538962235613246}
+  lag=7, hidden_layers=[64, 128, 64], dropout=0.4963962724161711, activation=tanh, epochs=80, batch_size=32, lr=4.678448421145573e-05
+Trial 1: MSE=0.082583, Params={'lag': 7, 'hidden_layers': [64, 128, 64], 'dropout': 0.4963962724161711, 'activation': 'tanh', 'epochs': 80, 'batch_size': 32, 'lr': 4.678448421145573e-05}
+  lag=5, hidden_layers=[64, 128], dropout=0.47623628360884274, activation=tanh, epochs=80, batch_size=32, lr=0.00023431624420607302
+Trial 2: MSE=0.056793, Params={'lag': 5, 'hidden_layers': [64, 128], 'dropout': 0.47623628360884274, 'activation': 'tanh', 'epochs': 80, 'batch_size': 32, 'lr': 0.00023431624420607302}
+  lag=7, hidden_layers=[128, 256, 128], dropout=0.3710638753061792, activation=tanh, epochs=50, batch_size=32, lr=0.0006239145559656145
+Trial 3: MSE=0.048541, Params={'lag': 7, 'hidden_layers': [128, 256, 128], 'dropout': 0.3710638753061792, 'activation': 'tanh', 'epochs': 50, 'batch_size': 32, 'lr': 0.0006239145559656145}
+  lag=5, hidden_layers=[64], dropout=0.001161963733648852, activation=relu, epochs=70, batch_size=16, lr=1.2276350042117532e-05
+Trial 4: MSE=0.008531, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.001161963733648852, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 1.2276350042117532e-05}
+  lag=7, hidden_layers=[64, 128, 64], dropout=0.2887568082911209, activation=tanh, epochs=50, batch_size=16, lr=1.3505810944893518e-05
+Trial 5: MSE=0.025504, Params={'lag': 7, 'hidden_layers': [64, 128, 64], 'dropout': 0.2887568082911209, 'activation': 'tanh', 'epochs': 50, 'batch_size': 16, 'lr': 1.3505810944893518e-05}
+  lag=3, hidden_layers=[64, 128], dropout=0.08330498750835436, activation=tanh, epochs=90, batch_size=32, lr=1.6482154018869557e-05
+Trial 6: MSE=0.014746, Params={'lag': 3, 'hidden_layers': [64, 128], 'dropout': 0.08330498750835436, 'activation': 'tanh', 'epochs': 90, 'batch_size': 32, 'lr': 1.6482154018869557e-05}
+  lag=3, hidden_layers=[128], dropout=0.09311240267922688, activation=relu, epochs=90, batch_size=16, lr=0.006992976636466039
+Trial 7: MSE=0.073646, Params={'lag': 3, 'hidden_layers': [128], 'dropout': 0.09311240267922688, 'activation': 'relu', 'epochs': 90, 'batch_size': 16, 'lr': 0.006992976636466039}
+  lag=7, hidden_layers=[64], dropout=0.25091154028194396, activation=tanh, epochs=100, batch_size=64, lr=0.0003829639453477292
+Trial 8: MSE=0.018672, Params={'lag': 7, 'hidden_layers': [64], 'dropout': 0.25091154028194396, 'activation': 'tanh', 'epochs': 100, 'batch_size': 64, 'lr': 0.0003829639453477292}
+  lag=3, hidden_layers=[128, 64], dropout=0.48667261917195204, activation=relu, epochs=90, batch_size=32, lr=0.005628802776551455
+Trial 9: MSE=0.852728, Params={'lag': 3, 'hidden_layers': [128, 64], 'dropout': 0.48667261917195204, 'activation': 'relu', 'epochs': 90, 'batch_size': 32, 'lr': 0.005628802776551455}
+  lag=5, hidden_layers=[64], dropout=0.005676487335766328, activation=relu, epochs=60, batch_size=16, lr=7.69484734878387e-05
+Trial 10: MSE=0.004584, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.005676487335766328, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 7.69484734878387e-05}
+  lag=5, hidden_layers=[64], dropout=0.0019648268495430087, activation=relu, epochs=60, batch_size=16, lr=7.212437949093484e-05
+Trial 11: MSE=0.003363, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.0019648268495430087, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 7.212437949093484e-05}
+  lag=4, hidden_layers=[64], dropout=0.003171644361192827, activation=relu, epochs=60, batch_size=16, lr=8.477109518293288e-05
+Trial 12: MSE=0.005676, Params={'lag': 4, 'hidden_layers': [64], 'dropout': 0.003171644361192827, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 8.477109518293288e-05}
+  lag=5, hidden_layers=[64], dropout=0.13284341039827474, activation=relu, epochs=60, batch_size=16, lr=7.663447452674663e-05
+Trial 13: MSE=0.010039, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.13284341039827474, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 7.663447452674663e-05}
+  lag=6, hidden_layers=[64], dropout=0.16923680122451906, activation=relu, epochs=60, batch_size=16, lr=0.00015819694898459215
+Trial 14: MSE=0.014728, Params={'lag': 6, 'hidden_layers': [64], 'dropout': 0.16923680122451906, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 0.00015819694898459215}
+  lag=4, hidden_layers=[128], dropout=0.05146770244697228, activation=relu, epochs=70, batch_size=16, lr=4.121596169928054e-05
+Trial 15: MSE=0.004800, Params={'lag': 4, 'hidden_layers': [128], 'dropout': 0.05146770244697228, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 4.121596169928054e-05}
+  lag=8, hidden_layers=[128, 256, 128], dropout=0.18029599608411118, activation=relu, epochs=60, batch_size=64, lr=0.001191588965732586
+Trial 16: MSE=0.661013, Params={'lag': 8, 'hidden_layers': [128, 256, 128], 'dropout': 0.18029599608411118, 'activation': 'relu', 'epochs': 60, 'batch_size': 64, 'lr': 0.001191588965732586}
+  lag=4, hidden_layers=[64], dropout=0.04904426448893967, activation=relu, epochs=50, batch_size=16, lr=0.0019812379386455335
+Trial 17: MSE=0.025758, Params={'lag': 4, 'hidden_layers': [64], 'dropout': 0.04904426448893967, 'activation': 'relu', 'epochs': 50, 'batch_size': 16, 'lr': 0.0019812379386455335}
+  lag=6, hidden_layers=[64], dropout=0.1939957400645958, activation=relu, epochs=70, batch_size=16, lr=3.2174954668258645e-05
+Trial 18: MSE=0.008524, Params={'lag': 6, 'hidden_layers': [64], 'dropout': 0.1939957400645958, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 3.2174954668258645e-05}
+  lag=5, hidden_layers=[64], dropout=0.37487420652906134, activation=relu, epochs=60, batch_size=16, lr=0.00010294578903609209
+Trial 19: MSE=0.019404, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.37487420652906134, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 0.00010294578903609209}
+  lag=4, hidden_layers=[128, 256, 128], dropout=0.12640186097729803, activation=relu, epochs=50, batch_size=64, lr=2.764073007205273e-05
+Trial 20: MSE=0.181419, Params={'lag': 4, 'hidden_layers': [128, 256, 128], 'dropout': 0.12640186097729803, 'activation': 'relu', 'epochs': 50, 'batch_size': 64, 'lr': 2.764073007205273e-05}
+  lag=4, hidden_layers=[128], dropout=0.03537280366035663, activation=relu, epochs=70, batch_size=16, lr=5.242738978859595e-05
+Trial 21: MSE=0.005881, Params={'lag': 4, 'hidden_layers': [128], 'dropout': 0.03537280366035663, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 5.242738978859595e-05}
+  lag=4, hidden_layers=[128], dropout=0.04513541591914805, activation=relu, epochs=70, batch_size=16, lr=0.00016873602776630939
+Trial 22: MSE=0.007814, Params={'lag': 4, 'hidden_layers': [128], 'dropout': 0.04513541591914805, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 0.00016873602776630939}
+  lag=5, hidden_layers=[128], dropout=0.08514340886987502, activation=relu, epochs=60, batch_size=16, lr=2.8196114572965887e-05
+Trial 23: MSE=0.006835, Params={'lag': 5, 'hidden_layers': [128], 'dropout': 0.08514340886987502, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 2.8196114572965887e-05}
+  lag=6, hidden_layers=[128], dropout=0.0036954143565427144, activation=relu, epochs=70, batch_size=16, lr=0.0001384339992649365
+Trial 24: MSE=0.003836, Params={'lag': 6, 'hidden_layers': [128], 'dropout': 0.0036954143565427144, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 0.0001384339992649365}
+  lag=6, hidden_layers=[64, 128], dropout=0.004336619398127663, activation=relu, epochs=60, batch_size=16, lr=0.0001324053248351643
+Trial 25: MSE=0.004238, Params={'lag': 6, 'hidden_layers': [64, 128], 'dropout': 0.004336619398127663, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 0.0001324053248351643}
+  lag=6, hidden_layers=[64, 128], dropout=0.11866729806776957, activation=relu, epochs=70, batch_size=16, lr=0.00042684697663968274
+Trial 26: MSE=0.163039, Params={'lag': 6, 'hidden_layers': [64, 128], 'dropout': 0.11866729806776957, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 0.00042684697663968274}
+  lag=8, hidden_layers=[64, 128], dropout=0.07071280648194841, activation=relu, epochs=50, batch_size=16, lr=0.00021973095061500304
+Trial 27: MSE=0.095761, Params={'lag': 8, 'hidden_layers': [64, 128], 'dropout': 0.07071280648194841, 'activation': 'relu', 'epochs': 50, 'batch_size': 16, 'lr': 0.00021973095061500304}
+  lag=6, hidden_layers=[64, 128], dropout=0.20882264688073507, activation=relu, epochs=80, batch_size=64, lr=0.000142080687628383
+Trial 28: MSE=0.113006, Params={'lag': 6, 'hidden_layers': [64, 128], 'dropout': 0.20882264688073507, 'activation': 'relu', 'epochs': 80, 'batch_size': 64, 'lr': 0.000142080687628383}
+  lag=6, hidden_layers=[128, 64], dropout=0.3054800656745018, activation=relu, epochs=60, batch_size=16, lr=0.0009573107307988229
+Trial 29: MSE=0.087175, Params={'lag': 6, 'hidden_layers': [128, 64], 'dropout': 0.3054800656745018, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 0.0009573107307988229}
+  lag=6, hidden_layers=[64, 128, 64], dropout=0.026757257207155084, activation=relu, epochs=70, batch_size=64, lr=0.00029123807607386013
+Trial 30: MSE=0.021593, Params={'lag': 6, 'hidden_layers': [64, 128, 64], 'dropout': 0.026757257207155084, 'activation': 'relu', 'epochs': 70, 'batch_size': 64, 'lr': 0.00029123807607386013}
+  lag=5, hidden_layers=[128, 64], dropout=0.004699756521336089, activation=relu, epochs=60, batch_size=16, lr=7.510797728501883e-05
+Trial 31: MSE=0.003870, Params={'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.004699756521336089, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 7.510797728501883e-05}
+  lag=5, hidden_layers=[128, 64], dropout=0.02809218710787917, activation=relu, epochs=60, batch_size=16, lr=0.00012237055871628207
+Trial 32: MSE=0.012288, Params={'lag': 5, 'hidden_layers': [128, 64], 'dropout': 0.02809218710787917, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 0.00012237055871628207}
+  lag=7, hidden_layers=[128, 64], dropout=0.0633791377913534, activation=relu, epochs=80, batch_size=16, lr=5.1218148383222386e-05
+Trial 33: MSE=0.006326, Params={'lag': 7, 'hidden_layers': [128, 64], 'dropout': 0.0633791377913534, 'activation': 'relu', 'epochs': 80, 'batch_size': 16, 'lr': 5.1218148383222386e-05}
+  lag=6, hidden_layers=[128, 64], dropout=0.10468195926178647, activation=tanh, epochs=50, batch_size=32, lr=5.9062732648119105e-05
+Trial 34: MSE=0.015744, Params={'lag': 6, 'hidden_layers': [128, 64], 'dropout': 0.10468195926178647, 'activation': 'tanh', 'epochs': 50, 'batch_size': 32, 'lr': 5.9062732648119105e-05}
+  lag=5, hidden_layers=[64, 128], dropout=0.15340237343511573, activation=relu, epochs=70, batch_size=16, lr=0.00022168873993552165
+Trial 35: MSE=0.228560, Params={'lag': 5, 'hidden_layers': [64, 128], 'dropout': 0.15340237343511573, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 0.00022168873993552165}
+  lag=7, hidden_layers=[64, 128, 64], dropout=0.0005818243605398266, activation=tanh, epochs=60, batch_size=16, lr=2.2558198322901236e-05
+Trial 36: MSE=0.005648, Params={'lag': 7, 'hidden_layers': [64, 128, 64], 'dropout': 0.0005818243605398266, 'activation': 'tanh', 'epochs': 60, 'batch_size': 16, 'lr': 2.2558198322901236e-05}
+  lag=5, hidden_layers=[128], dropout=0.4352607413939429, activation=relu, epochs=50, batch_size=32, lr=0.0005465906021425095
+Trial 37: MSE=0.044972, Params={'lag': 5, 'hidden_layers': [128], 'dropout': 0.4352607413939429, 'activation': 'relu', 'epochs': 50, 'batch_size': 32, 'lr': 0.0005465906021425095}
+  lag=7, hidden_layers=[64, 128], dropout=0.03076557999340397, activation=tanh, epochs=80, batch_size=16, lr=0.00011363528673306632
+Trial 38: MSE=0.006880, Params={'lag': 7, 'hidden_layers': [64, 128], 'dropout': 0.03076557999340397, 'activation': 'tanh', 'epochs': 80, 'batch_size': 16, 'lr': 0.00011363528673306632}
+  lag=6, hidden_layers=[128, 64], dropout=0.06918140812344283, activation=relu, epochs=70, batch_size=16, lr=1.732925808417891e-05
+Trial 39: MSE=0.007641, Params={'lag': 6, 'hidden_layers': [128, 64], 'dropout': 0.06918140812344283, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 1.732925808417891e-05}
+  lag=5, hidden_layers=[128, 256, 128], dropout=0.0993546737342461, activation=tanh, epochs=60, batch_size=32, lr=0.00018917604274471726
+Trial 40: MSE=0.051169, Params={'lag': 5, 'hidden_layers': [128, 256, 128], 'dropout': 0.0993546737342461, 'activation': 'tanh', 'epochs': 60, 'batch_size': 32, 'lr': 0.00018917604274471726}
+  lag=5, hidden_layers=[64], dropout=5.3098337188695055e-05, activation=relu, epochs=60, batch_size=16, lr=7.023694002448674e-05
+Trial 41: MSE=0.002849, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 5.3098337188695055e-05, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 7.023694002448674e-05}
+  lag=5, hidden_layers=[64], dropout=0.018125154966393237, activation=relu, epochs=60, batch_size=16, lr=3.536661863367173e-05
+Trial 42: MSE=0.005747, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.018125154966393237, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 3.536661863367173e-05}
+  lag=6, hidden_layers=[64, 128, 64], dropout=0.004493544635772562, activation=relu, epochs=50, batch_size=16, lr=8.364306013920492e-05
+Trial 43: MSE=0.004986, Params={'lag': 6, 'hidden_layers': [64, 128, 64], 'dropout': 0.004493544635772562, 'activation': 'relu', 'epochs': 50, 'batch_size': 16, 'lr': 8.364306013920492e-05}
+  lag=5, hidden_layers=[64], dropout=0.054486937551084684, activation=relu, epochs=60, batch_size=16, lr=6.379186824581078e-05
+Trial 44: MSE=0.005804, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.054486937551084684, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 6.379186824581078e-05}
+  lag=5, hidden_layers=[128], dropout=0.024033753539066782, activation=relu, epochs=100, batch_size=16, lr=0.00031116797095032405
+Trial 45: MSE=0.004826, Params={'lag': 5, 'hidden_layers': [128], 'dropout': 0.024033753539066782, 'activation': 'relu', 'epochs': 100, 'batch_size': 16, 'lr': 0.00031116797095032405}
+  lag=6, hidden_layers=[64, 128], dropout=0.08202644703946263, activation=relu, epochs=70, batch_size=16, lr=0.0001064418680949742
+Trial 46: MSE=0.075097, Params={'lag': 6, 'hidden_layers': [64, 128], 'dropout': 0.08202644703946263, 'activation': 'relu', 'epochs': 70, 'batch_size': 16, 'lr': 0.0001064418680949742}
+  lag=7, hidden_layers=[128, 64], dropout=0.3271138878807728, activation=relu, epochs=60, batch_size=16, lr=1.0052303367483464e-05
+Trial 47: MSE=0.032447, Params={'lag': 7, 'hidden_layers': [128, 64], 'dropout': 0.3271138878807728, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 1.0052303367483464e-05}
+  lag=5, hidden_layers=[64], dropout=0.23526597202124575, activation=tanh, epochs=50, batch_size=32, lr=4.551959816646907e-05
+Trial 48: MSE=0.018246, Params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.23526597202124575, 'activation': 'tanh', 'epochs': 50, 'batch_size': 32, 'lr': 4.551959816646907e-05}
+  lag=4, hidden_layers=[64], dropout=0.04641068090848673, activation=relu, epochs=90, batch_size=64, lr=6.801440028798215e-05
+Trial 49: MSE=0.006279, Params={'lag': 4, 'hidden_layers': [64], 'dropout': 0.04641068090848673, 'activation': 'relu', 'epochs': 90, 'batch_size': 64, 'lr': 6.801440028798215e-05}
 Best trial:
-FrozenTrial(number=28, state=1, values=[0.02081745224710657], datetime_start=datetime.datetime(2025, 6, 20, 20, 47, 35, 795397), datetime_complete=datetime.datetime(2025, 6, 20, 20, 49, 41, 508026), params={'lag': 5, 'hidden_layers': [64], 'dropout': 0.002385734308530012, 'activation': 'tanh', 'epochs': 90, 'batch_size': 32, 'lr': 1.8382733654927772e-05}, user_attrs={}, system_attrs={}, intermediate_values={}, distributions={'lag': IntDistribution(high=8, log=False, low=3, step=1), 'hidden_layers': CategoricalDistribution(choices=([64], [128], [64, 128], [128, 64], [128, 256, 128], [64, 128, 64])), 'dropout': FloatDistribution(high=0.5, log=False, low=0.0, step=None), 'activation': CategoricalDistribution(choices=('relu', 'tanh')), 'epochs': IntDistribution(high=100, log=False, low=50, step=10), 'batch_size': CategoricalDistribution(choices=(16, 32, 64)), 'lr': FloatDistribution(high=0.01, log=True, low=1e-05, step=None)}, trial_id=28, value=None)
+FrozenTrial(number=41, state=1, values=[0.0028494413958749915], datetime_start=datetime.datetime(2025, 6, 24, 14, 52, 50, 650881), datetime_complete=datetime.datetime(2025, 6, 24, 14, 55, 13, 61875), params={'lag': 5, 'hidden_layers': [64], 'dropout': 5.3098337188695055e-05, 'activation': 'relu', 'epochs': 60, 'batch_size': 16, 'lr': 7.023694002448674e-05}, user_attrs={}, system_attrs={}, intermediate_values={}, distributions={'lag': IntDistribution(high=8, log=False, low=3, step=1), 'hidden_layers': CategoricalDistribution(choices=([64], [128], [64, 128], [128, 64], [128, 256, 128], [64, 128, 64])), 'dropout': FloatDistribution(high=0.5, log=False, low=0.0, step=None), 'activation': CategoricalDistribution(choices=('relu', 'tanh')), 'epochs': IntDistribution(high=100, log=False, low=50, step=10), 'batch_size': CategoricalDistribution(choices=(16, 32, 64)), 'lr': FloatDistribution(high=0.01, log=True, low=1e-05, step=None)}, trial_id=41, value=None)

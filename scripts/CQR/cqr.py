@@ -19,12 +19,12 @@ alpha_lo = alpha / 2
 alpha_hi = 1 - alpha / 2
 quantiles = [alpha_lo, alpha_hi]
 
-batch_size = 32
-epochs = 100
-lr = 1e-4
-hidden_layers = [128, 64]
-dropout = 0.1
-activation = 'tanh'
+batch_size = 16
+epochs = 60
+lr = 7.023694002448674e-05
+hidden_layers = [64]
+dropout = 5.3098337188695055e-05
+activation = 'relu'
 
 visuals_dir = "./visuals/ann_data"
 output_dir = "./visuals/cqr_data"
@@ -61,7 +61,9 @@ def pinball_loss(pred, target, alpha):
     """
 
     error = target - pred
-    return torch.mean(torch.where(error >= 0, alpha * error, (alpha - 1) * error))
+    pinball_loss = torch.mean(torch.where(error >= 0, alpha * error, (alpha - 1) * error))
+
+    return pinball_loss
 
 def evaluate_cqr_on_errors(train=True):
     """
@@ -123,7 +125,7 @@ def evaluate_cqr_on_errors(train=True):
         print(f"Conformity Q={Q:.5f}")
 
         # Evaluate on test set
-        x_test_tensor = torch.tensor(X_test, dtype=torch.float32).to(device)
+        x_test_tensor = torch.tensor(X_test, dtype=torch.float32).to(device) # to evaluate on validation set, replace X_test with X_val
         eps_q_test = {q: models[q](x_test_tensor).cpu().detach().numpy().squeeze() for q in quantiles}
         
         # Calculate the spread of the quantile predictions
@@ -138,26 +140,7 @@ def evaluate_cqr_on_errors(train=True):
         print("c min/max:", y_true_train[:, 1].min(), y_true_train[:, 1].max())
         print("T_TM min/max:", y_true_train[:, 5].min(), y_true_train[:, 5].max())
 
-
-
-        # OPTIONAL: Visualisierung der Quantilmodelle
-        plt.figure(figsize=(8, 5))
-        # plt.scatter(np.arange(len(eps_q_test[alpha_lo])), eps_q_test[alpha_lo]-Q, label=f"q{alpha_lo:.2f}", alpha=0.5)
-        # plt.scatter(np.arange(len(eps_q_test[alpha_hi])), eps_q_test[alpha_hi]+Q, label=f"q{alpha_hi:.2f}", alpha=0.5)
-        plt.plot(eps_q_test[alpha_lo]-Q, label=f"q{alpha_lo:.2f} - Q", color='gray', linewidth=1.0, alpha=0.5)
-        plt.plot(eps_q_test[alpha_hi]+Q, label=f"q{alpha_hi:.2f} + Q", color='gray', linewidth=1.0, alpha=0.5)
-        plt.fill_between(np.arange(len(eps_q_test[alpha_lo]-Q)), eps_q_test[alpha_lo]-Q, eps_q_test[alpha_hi]+Q, color='gray', alpha=0.3, label='Prediction Interval')
-
-        plt.scatter(np.arange(len(eps_test)), eps_test, label="true error", alpha=0.5, color="black", s=10)
-        plt.title(f"Quantilvorhersage für Fehler: {target}")
-        plt.xlabel("Testdatenpunkt")
-        plt.ylabel("Vorhergesagter Fehler")
-        plt.legend()
-        plt.grid(True)
-        plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, f"quantile_predictions_{target}.svg"))
-        plt.close()
-
+        # Calculate coverage and width
         lower = y_pred_test[:, i] + eps_q_test[alpha_lo] - Q
         upper = y_pred_test[:, i] + eps_q_test[alpha_hi] + Q
         cover = ((y_true_test[:, i] >= lower) & (y_true_test[:, i] <= upper)).mean()
@@ -172,18 +155,43 @@ def evaluate_cqr_on_errors(train=True):
 
         # Plot
         plt.figure(figsize=(12, 4))
-        plt.plot(y_true_test[:, i], 'o', label="True", alpha=0.2, markersize=1)
+        plt.plot(y_true_test[:, i], 'o', label="True", alpha=0.5, markersize=1)
         plt.plot(y_pred_test[:, i], '-', label="Pred", linewidth=0.5)
         plt.fill_between(np.arange(len(lower)), lower, upper, color='gray', alpha=0.5,
                          label=f"{int((1-alpha)*100)}% PI")
-        plt.title(f"CQR (error-based): {target}")
+        plt.title(f"CQR on test data: {target}")
         plt.legend()
         plt.grid(True)
         plt.tight_layout()
         plt.savefig(os.path.join(output_dir, f"cqr_interval_{target}.svg"))
         plt.close()
 
-    pd.DataFrame(results).to_csv(os.path.join(output_dir, "cqr_results.csv"), index=False)
+        # Plot on a smaller range for better visibility
+        plt.figure(figsize=(12, 4))
+        plt.plot(y_true_test[:, i], 'o', label="True", alpha=0.5, markersize=1)
+        plt.plot(y_pred_test[:, i], '-', label="Pred", linewidth=0.5)
+        plt.fill_between(np.arange(len(lower)), lower, upper, color='gray', alpha=0.5,
+                         label=f"{int((1-alpha)*100)}% PI")
+        plt.title(f"CQR on test data (zoomed): {target}")
+        plt.xlim(0, 100)  # Adjust the x-axis limit for zoom
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+        plt.savefig(os.path.join(output_dir, f"cqr_interval_zoomed_{target}.svg"))
+        plt.close()
+
+    # Save results
+    txt_path = os.path.join(output_dir, "cqr_results.txt")
+    with open(txt_path, "w") as f:
+        f.write("Conformal Quantile Regression Results\n")
+        f.write("=" * 40 + "\n")
+        for entry in results:
+            f.write(f"Target: {entry['target']}\n")
+            f.write(f"  Coverage:       {entry['coverage']:.3f}\n")
+            f.write(f"  Interval Width: {entry['interval_width']:.3f}\n")
+            f.write("-" * 40 + "\n")
+    print(f"\nCQR summary saved to: {txt_path}")
+
     np.save(os.path.join(output_dir, "conformity_values.npy"), conformity_vals)
     print("\nCQR on errors done:\n", pd.DataFrame(results))
 
