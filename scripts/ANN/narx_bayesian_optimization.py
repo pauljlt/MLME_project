@@ -1,7 +1,4 @@
-# scripts/ANN/narx_bayesian_optimization.py
-
 import os
-import sys
 import torch
 import optuna
 import numpy as np
@@ -38,6 +35,15 @@ log_file = open(log_path, "w")
 
 # Objective function for Optuna
 def objective(trial):
+    """
+    Objective function for Optuna to optimize hyperparameters for NARX model.
+    
+    Args:
+        trial (optuna.Trial): The trial object containing the hyperparameters to be optimized.
+    Returns:
+        float: The mean squared error (MSE) of the model on the validation set.
+    """
+    
     u_lag = y_lag = trial.suggest_int("lag", 3, 8)
 
     # Preprocess

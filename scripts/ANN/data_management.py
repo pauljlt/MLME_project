@@ -8,11 +8,11 @@ def load_data(file_path):
     """
     Load data from a txt-file into a pandas DataFrame.
     
-    Parameters:
-    file_path (str): The path to the txt-file.
+    Args:
+        file_path (str): The path to the txt-file.
     
     Returns:
-    pd.DataFrame: The loaded data as a DataFrame.
+        pd.DataFrame: The loaded data as a DataFrame.
     """
 
     try:
@@ -31,11 +31,11 @@ def load_all_data(directory):
     """
     Load all txt-files from a directory into a single pandas DataFrame.
     
-    Parameters:
-    directory (str): The path to the directory containing txt-files.
+    Args:
+        directory (str): The path to the directory containing txt-files.
     
     Returns:
-    pd.DataFrame: A DataFrame containing all loaded data.
+        pd.DataFrame: A DataFrame containing all loaded data.
     """
 
     all_data = []
@@ -58,11 +58,11 @@ def analyze_data(data):
     """
     Analyze the loaded data.
     
-    Parameters:
-    data (pd.DataFrame): The DataFrame containing the loaded data.
+    Args:
+        data (pd.DataFrame): The DataFrame containing the loaded data.
     
     Returns:
-    None: Prints basic statistics of the data.
+        None: Prints basic statistics of the data.
     """
 
     if not data.empty:
@@ -85,11 +85,11 @@ def plot_data(data):
     """
     Plot the data for visual analysis.
     
-    Parameters:
-    data (pd.DataFrame): The DataFrame containing the loaded data.
+    Args:
+        data (pd.DataFrame): The DataFrame containing the loaded data.
     
     Returns:
-    None: Displays plots of the data.
+        None: Displays plots of the data.
     """
 
     visuals_dir = "./visuals/data_management"

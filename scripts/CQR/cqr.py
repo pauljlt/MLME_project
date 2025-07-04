@@ -46,7 +46,7 @@ y_true_val = np.load(os.path.join(visuals_dir, "y_true_val.npy"))
 y_pred_test = np.load(os.path.join(visuals_dir, "y_pred_test.npy")) # y_pred_test = np.load(os.path.join(btf_dir, "btf_pred.npy")) # BTF data
 y_true_test = np.load(os.path.join(visuals_dir, "y_true_test.npy")) # y_true_test = np.load(os.path.join(btf_dir, "btf_true.npy"))  # BTF data
 
-# Pinball loss
+
 def pinball_loss(pred, target, alpha):
     """
     Calculates the pinball loss for quantile regression.
@@ -64,6 +64,7 @@ def pinball_loss(pred, target, alpha):
     pinball_loss = torch.mean(torch.where(error >= 0, alpha * error, (alpha - 1) * error))
 
     return pinball_loss
+
 
 def evaluate_cqr_on_errors(train=True):
     """
