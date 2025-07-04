@@ -25,6 +25,17 @@ y_true_val = np.load("./visuals/ann_data/y_true_val.npy")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def objective(trial, i, quantile):
+    """
+    Objective function for Optuna to optimize hyperparameters for NARX model.
+
+    Args:
+        trial (optuna.Trial): The trial object containing the hyperparameters to be optimized.
+        i (int): The index of the target variable in the output columns.
+        quantile (float): The quantile level for the pinball loss function.
+    Returns:
+        float: The mean absolute error (MAE) of the model on the validation set.
+    """
+    
     hidden_layers = trial.suggest_categorical("hidden_layers", [[64], [128], [64, 64], [128, 64], [128, 128]])
     dropout = trial.suggest_float("dropout", 0.0, 0.3)
     activation = trial.suggest_categorical("activation", ["relu", "tanh"])

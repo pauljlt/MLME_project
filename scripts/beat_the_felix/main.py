@@ -70,16 +70,6 @@ def evaluate_model(model, x_init, y_target, scaler_y, u_lag=None, output_size=No
 
 
 def main():
-    """
-    Run Beat-the-Felix evaluation using both open-loop and closed-loop prediction.
-    
-    Args:
-        None
-        
-    Returns:
-        None
-    """
-    
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
@@ -129,7 +119,7 @@ def main():
         plt.plot(true_open[:, i], 'o', label="True", alpha=0.2, markersize=2)
         plt.plot(pred_open[:, i], '-', label="Pred Open-Loop", linewidth=1)
         plt.plot(pred_closed[:, i], '--', label="Pred Closed-Loop", linewidth=1)
-        plt.title(f"Beat-the-Felix Prediction – {col}")
+        plt.title(f"Beat-the-Felix Prediction: {col}")
         plt.xlabel("Timestep")
         plt.ylabel(col)
         plt.legend()

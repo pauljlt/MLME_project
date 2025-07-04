@@ -15,6 +15,7 @@ from scripts.ANN.data_management import analyze_data
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
+
 class NARXNet(nn.Module):
     """
     Flexible feedforward neural network for NARX modeling.
@@ -25,7 +26,12 @@ class NARXNet(nn.Module):
         hidden_layers (list): List of integers, each specifying the number of neurons in a hidden layer.
         dropout (float): Dropout rate applied after each hidden layer.
         activation (str): Activation function, either 'relu' or 'tanh'.
+    Attributes:
+        model (nn.Sequential): Sequential model containing the layers and activation functions.
+    Methods:
+        forward(x): Forward pass through the model, taking an input tensor and returning the output tensor.
     """
+    
     def __init__(self, input_size, output_size, hidden_layers=[64, 64], dropout=0.2, activation='relu'):
         super(NARXNet, self).__init__()
 
@@ -60,6 +66,7 @@ class NARXNet(nn.Module):
             torch.Tensor: Output tensor of shape (batch_size, output_size).
         """
         return self.model(x)
+
 
 def split_data(df):
     """

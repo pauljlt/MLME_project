@@ -14,11 +14,11 @@ def preprocess_data(data, visuals_dir, plot=False):
     """
     Preprocess the data by scaling and applying PCA.
     
-    Parameters:
-    data (pd.DataFrame): The DataFrame containing the loaded data.
+    Args:
+        data (pd.DataFrame): The DataFrame containing the loaded data.
     
     Returns:
-    pd.DataFrame: The preprocessed data.
+        pd.DataFrame: The preprocessed data.
     """
 
     # Scale the features
@@ -58,13 +58,13 @@ def cluster_data(data, eps=0.3, min_samples=5):
     """
     Cluster the data using DBSCAN.
     
-    Parameters:
-    data (pd.DataFrame): The DataFrame containing the preprocessed data.
-    eps (float): The maximum distance between two samples for one to be considered as in the neighborhood of the other.
-    min_samples (int): The number of samples in a neighborhood for a point to be considered as a core point.
+    Args:
+        data (pd.DataFrame): The DataFrame containing the preprocessed data.
+        eps (float): The maximum distance between two samples for one to be considered as in the neighborhood of the other.
+        min_samples (int): The number of samples in a neighborhood for a point to be considered as a core point.
     
     Returns:
-    pd.Series: The cluster labels for each sample.
+        pd.Series: The cluster labels for each sample.
     """
 
     dbscan = DBSCAN(eps=eps, min_samples=min_samples)
@@ -79,12 +79,12 @@ def plot_clusters(data, visuals_dir, cluster_labels):
     """
     Plot the clusters in a 2D space.
 
-    Parameters:
-    data (pd.DataFrame): The DataFrame containing the preprocessed data.
-    cluster_labels (pd.Series): The cluster labels for each sample.
+    Args:
+        data (pd.DataFrame): The DataFrame containing the preprocessed data.
+        cluster_labels (pd.Series): The cluster labels for each sample.
 
     Returns:
-    None: Displays the plot.
+        None: Displays the plot.
     """
 
     plt.figure(figsize=(10, 6))
