@@ -8,55 +8,86 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 from scripts.ANN.ann import NARXNet, prepare_data_multi, create_narx_dataset_multi
 
+
+def shift_lags_by_state(y_old, y_pred, output_size, u_lag):
+    """
+    Shift y_old (lagged outputs) state-wise and insert new predicted values.
+
+    Args:
+        y_old (np.ndarray): Previous output values with shape (output_size * u_lag
+        y_pred (np.ndarray): Predicted output values with shape (output_size,).
+        output_size (int): Number of output states.
+        u_lag (int): Lag for the input data.
+
+    Returns:
+        np.ndarray: Updated y_new with shifted values and new predictions.
+    """
+    
+    y_new = np.zeros_like(y_old)
+
+    for i in range(output_size):
+        start = i * u_lag
+        end = start + u_lag
+
+        # Shift block for state i to the left
+        y_new[start:end - 1] = y_old[start + 1:end]
+        y_new[end - 1] = y_pred[i]  # append new predicted value at end
+
+    return y_new
+
+
 def evaluate_model(model, x_init, y_target, scaler_y, u_lag=None, output_size=None, mode="open"):
     """
     Evaluate the NARX model in open-loop or closed-loop mode.
-    
+
     Args:
         model (NARXNet): The trained NARX model.
         x_init (np.ndarray): Initial input data for the model.
         y_target (np.ndarray): Target output data for evaluation.
-        scaler_y (joblib.ScikitLearn): Scaler for the target output.
+        scaler_y (joblib.ScikitLearn): Scaler for the output data.
         u_lag (int, optional): Lag for the input data in closed-loop mode.
         output_size (int, optional): Size of the output in closed-loop mode.
         mode (str): Evaluation mode, either "open" or "closed".
-
+    
     Returns:
-        np.ndarray: True target values.
-        np.ndarray: Predicted values from the model.
+        tuple: True and predicted output values after inverse transformation.
     """
-    # Ensure model is in evaluation mode
     model.eval()
 
-    # Open-loop mode: use the initial input data directly
     if mode == "open":
         with torch.no_grad():
             x_tensor = torch.tensor(x_init, dtype=torch.float32)
             y_pred = model(x_tensor).detach().numpy()
 
-    # Closed-loop mode: iteratively predict and update input data
     elif mode == "closed":
         if u_lag is None or output_size is None:
             raise ValueError("u_lag and output_size must be provided for closed-loop mode")
 
         x_current = x_init.copy()
+        x_current[0] = x_init[0] # Initial state remains the same
         y_pred_list = []
 
-        # Iterate through the time steps
         for t in range(len(x_current)):
-            x_t = torch.tensor(x_current[t:t + 1], dtype=torch.float32) # Get the current input data
-            y_pred_t = model(x_t).detach().numpy() # Predict the output for the current input
-            y_pred_list.append(y_pred_t[0]) # Store the prediction
+            x_t = torch.tensor(x_current[t:t + 1], dtype=torch.float32)
+            y_pred_t = model(x_t).detach().numpy()
+            y_pred_list.append(y_pred_t[0])
 
-            # Update the input data for the next time step
             if t + 1 < len(x_current):
-                u_part = x_current[t + 1][: -output_size * u_lag] # Get the input part of the next time step
-                y_old = x_current[t + 1][-output_size * u_lag:] # Get the old output part of the next time step
+                # inputs come from the previous state and the true outputs
+                u_part = x_current[t + 1][: -output_size * u_lag]
 
-                y_new = np.roll(y_old, -output_size) # Shift the old output part
-                
-                y_new[-output_size:] = y_pred_t[0] # Replace the last part with the new prediction
-                x_current[t + 1] = np.concatenate([u_part, y_new]) # Concatenate the updated input part with the new output part
+                # states are shifted by one time step and new predictions are appended
+                y_old = x_current[t][-output_size * u_lag:]
+                y_new = shift_lags_by_state(y_old, y_pred_t[0], output_size, u_lag)
+
+
+                x_current[t + 1] = np.concatenate([u_part, y_new])
+
+            # if t < 10:
+            #     print("Old y:", y_old.reshape(output_size, u_lag))
+            #     print("New y:", y_new.reshape(output_size, u_lag))
+            #     print("y_pred:", y_pred_t[0])
+
 
         y_pred = np.array(y_pred_list)
 

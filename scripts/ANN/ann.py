@@ -300,6 +300,8 @@ def plot_predictions(y_true, y_pred, feature_names, title="NARX Model Prediction
         plt.xlabel("Timestep")
         plt.legend()
         plt.grid(True)
+        if name in ['d10', 'd50', 'd90']:
+            plt.ylim(0, 0.003)  # Set y-limits for particle size features
     plt.suptitle(title)
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, f"{title}.svg"))
