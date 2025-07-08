@@ -174,7 +174,7 @@ def evaluate_cqr_on_errors(train=True):
         plt.fill_between(np.arange(len(lower)), lower, upper, color='gray', alpha=0.5,
                          label=f"{int((1-alpha)*100)}% PI")
         plt.title(f"CQR on test data (zoomed): {target}")
-        plt.xlim(0, 100)  # Adjust the x-axis limit for zoom
+        plt.xlim(0, 500)  # Adjust the x-axis limit for zoom
         plt.legend()
         plt.grid(True)
         plt.tight_layout()
