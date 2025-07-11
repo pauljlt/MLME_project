@@ -1,3 +1,6 @@
+'''
+To run main.py follow the steps given in the README.md.
+'''
 import os
 import numpy as np
 import pandas as pd
@@ -112,7 +115,7 @@ def main():
     activation = 'relu'
 
     ann_dir = "./visuals/ann_data"
-    btf_path = "./release/Beat-the-Felix/file_btf.txt"
+    btf_path = "./release/Beat-the-Felix/beat_the_felix.txt"
     output_dir = "./visuals/beat_the_felix"
     os.makedirs(output_dir, exist_ok=True)
 

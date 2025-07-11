@@ -106,5 +106,5 @@ python -m path.to.script
 
 ## Beat-the-Felix
 
-1. Store your file in **MLME_projet/release/Beat-the-Felix** and rename it as **'file_btf.txt'**.
+1. Store your file in **MLME_projet/release/Beat-the-Felix** and rename it as **'beat_the_felix.txt'**.
 2. Just run **'python -m scripts.beat_the_felix.main'** out of the './MLME_project'.
