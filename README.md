@@ -51,7 +51,60 @@ Then install the required packages using:
 pip install -r requirements.txt
 ```
 
-## Workflow
+## File Structure
+
+```text
+MLME_project/
+├── release/
+│   ├── Beat-the-Felix/
+│   ├── Literature/
+│   ├── CrysID_MLME25
+│   └── Project report template-20250630.zip
+├── scripts/
+│   ├── __pycache__/
+│   ├── ANN/
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   ├── ann.py
+│   │   ├── clustering.py
+│   │   ├── data_management.py
+│   │   └── narx_bayesian_optimization.py
+│   ├── beat_the_felix/
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   └── main.py
+│   ├── CQR/
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   ├── cqr.py
+│   │   └── cqr_bayesian_optimization.py
+│   └── __init__.py
+├── submission_files/
+│   ├── ai_disclosure/
+│   │   ├── MLME_project_AI_disclosure.pdf
+│   │   └── MLME_project_AI_disclosure.zip
+│   ├── report/
+│   │   ├── MLME_project_report_G2.pdf
+│   │   └── MLME_project_report_G2.zip
+│   ├── screencast/
+│   │   ├── MLME_project_final_presentation_G2.mp4
+│   └── └── MLME_project_final_presentation_G2.pptx
+├── visuals/
+│   ├── ann_data/
+│   ├── bayezian_optimization/
+│   ├── beat_the_felix/
+│   ├── clustering/
+│   ├── cqr_data/
+│   ├── data_management/
+│   └── specials/
+├── LICENSE.md
+├── README.md
+└── requirements.txt
+MLME_venv/
+```
+
+
+## Git-Workflow
 
 1. **Create a branch with your name.** This branch is where you’ll work without affecting the main branch. This avoids conflicts and keeps everyone’s work isolated.
 
